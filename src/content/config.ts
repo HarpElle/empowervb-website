@@ -18,6 +18,7 @@ const news = defineCollection({
     title: z.string(),
     date: z.string(),
     author: z.string().default('Empower VB Staff'),
+    excerpt: z.string().optional(),
     tags: z.array(z.string()),
     featured: z.boolean().default(false),
   }),

@@ -4,9 +4,9 @@ import { getCollection } from 'astro:content';
 import { parseISO, format } from 'date-fns';
 const allNews = await getCollection('news');
 const today = new Date();
-const news = allNews
-  .filter(article => new Date(article.data.date) <= today)
-  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+const futureNews = allNews
+  .filter(article => new Date(article.data.date) > today)
+  .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
 
 // Helper to get preview text
 function getPreview(article) {
@@ -30,47 +30,47 @@ function getPreview(article) {
   <!-- Hero Section -->
   <section class="py-20 section-gradient">
     <div class="max-w-4xl mx-auto px-4 text-center animate-fade-in">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-empower-navy">Latest News & Updates</h1>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-empower-navy">Upcoming News & Events</h1>
       <p class="text-lg md:text-xl text-empower-navy/70 max-w-2xl mx-auto">
-        Stay up to date with the latest developments, announcements, and exciting news from Empower Volleyball Club.
+        Preview upcoming announcements, events, and exciting news from Empower Volleyball Club.
       </p>
       <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto mt-6"></div>
     </div>
   </section>
 
-  <!-- News Content -->
+  <!-- Future News Content -->
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      {news.length === 0 ? (
+      {futureNews.length === 0 ? (
         <!-- Empty State -->
         <div class="text-center py-20 animate-slide-up">
           <div class="w-20 h-20 bg-gradient-to-br from-empower-coral/20 to-empower-lilac/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <svg class="w-10 h-10 text-empower-coral" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-empower-navy mb-4">
-            More News Coming Soon!
+            No Upcoming News Scheduled
           </h2>
           <p class="text-lg text-empower-mid-gray mb-8 max-w-lg mx-auto">
-            We’re just getting started! Check back soon for exciting updates about tryouts, coaching staff, facility announcements, and more.
+            We don't have any upcoming announcements scheduled at the moment. Check back soon for future updates!
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/interest" class="btn-primary">
-              Pre-Register Your Interest
+            <a href="/news" class="btn-primary">
+              View Current News
             </a>
             <a href="/contact" class="btn-secondary">
-              Contact Us for Updates
+              Contact Us
             </a>
           </div>
         </div>
       ) : (
-        <!-- News Articles -->
+        <!-- Future News Articles -->
         <div class="space-y-8">
-          {news.map((article, index) => (
+          {futureNews.map((article, index) => (
             <article class={`group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-slide-up`} style={`animation-delay: ${index * 0.1}s;`} key={article.id}>
               {/* Subtle background gradient overlay */}
-              <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-empower-coral/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-empower-lilac/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <div class="relative p-8 lg:p-10">
                 <div class="flex flex-col lg:flex-row gap-8">
@@ -79,31 +79,29 @@ function getPreview(article) {
                     <!-- Article Header with enhanced styling -->
                     <div class="flex items-start justify-between mb-6">
                       <div class="flex items-center gap-4 text-sm text-empower-mid-gray">
-                        <div class="flex items-center gap-2 px-3 py-1.5 bg-empower-light-gray/50 rounded-full">
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-empower-lilac/20 rounded-full">
                           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                           </svg>
                           <time class="font-medium">{format(parseISO(article.data.date), 'MMMM d, yyyy')}</time>
                         </div>
-                        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-empower-light-gray/50 rounded-full">
+                        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-empower-lilac/20 rounded-full">
                           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                           <span class="font-medium">{article.data.author}</span>
                         </div>
                       </div>
-                      {article.data.featured && (
-                        <span class="bg-gradient-to-r from-empower-coral to-empower-coral/80 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
-                          Featured
-                        </span>
-                      )}
+                      <span class="bg-gradient-to-r from-empower-lilac to-empower-lilac/80 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
+                        Coming Soon
+                      </span>
                     </div>
                     
                     <!-- Article Title with enhanced hover effect -->
                     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-empower-navy leading-tight">
-                      <a href={`/news/${article.slug}/`} class="block group-hover:text-empower-coral transition-colors duration-300 hover:underline decoration-empower-coral decoration-2 underline-offset-4">
+                      <span class="block group-hover:text-empower-lilac transition-colors duration-300">
                         {article.data.title}
-                      </a>
+                      </span>
                     </h2>
                     
                     <!-- Article Preview with better typography -->
@@ -119,15 +117,12 @@ function getPreview(article) {
                         </svg>
                         <span>By {article.data.author}</span>
                       </div>
-                      <a 
-                        href={`/news/${article.slug}/`} 
-                        class="inline-flex items-center gap-2 text-empower-coral hover:text-empower-coral/80 font-bold transition-all duration-300 group/btn px-4 py-2 rounded-xl hover:bg-empower-coral/5"
-                      >
-                        Read Full Article
-                        <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      <div class="inline-flex items-center gap-2 text-empower-lilac font-bold px-4 py-2 rounded-xl bg-empower-lilac/5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                      </a>
+                        Scheduled for Release
+                      </div>
                     </div>
                   </div>
                   
@@ -137,7 +132,7 @@ function getPreview(article) {
                       <div class="text-sm font-bold text-empower-navy mb-3 hidden lg:block uppercase tracking-wide">Topics</div>
                       <div class="flex lg:flex-col gap-2 flex-wrap">
                         {article.data.tags.map(tag => (
-                          <span class="bg-gradient-to-r from-empower-light-gray to-empower-light-gray/80 text-empower-navy px-4 py-2 rounded-full text-xs font-semibold hover:from-empower-coral/10 hover:to-empower-coral/5 hover:text-empower-coral transition-all duration-300 cursor-default" key={tag}>
+                          <span class="bg-gradient-to-r from-empower-light-gray to-empower-light-gray/80 text-empower-navy px-4 py-2 rounded-full text-xs font-semibold hover:from-empower-lilac/10 hover:to-empower-lilac/5 hover:text-empower-lilac transition-all duration-300 cursor-default" key={tag}>
                             #{tag}
                           </span>
                         ))}
@@ -157,25 +152,25 @@ function getPreview(article) {
   <section class="py-16 section-gradient">
     <div class="max-w-3xl mx-auto px-4 text-center animate-slide-up">
       <div class="card p-10">
-        <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
+        <div class="w-16 h-16 bg-gradient-to-br from-empower-lilac to-empower-lilac/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
         </div>
         
         <h2 class="text-2xl md:text-3xl font-bold mb-4 text-empower-navy">
-          Never Miss an Update
+          Stay Updated on Future Announcements
         </h2>
         <p class="text-empower-mid-gray mb-8 leading-relaxed">
-          Stay informed about tryout announcements, coaching staff updates, facility news, and all the latest developments from Empower VB.
+          Be the first to know about upcoming tryout announcements, coaching staff updates, facility news, and all the latest developments from Empower VB.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/interest" class="btn-primary">
             Pre-Register for Updates
           </a>
-          <a href="/contact" class="btn-secondary">
-            Contact Us
+          <a href="/news" class="btn-secondary">
+            View Current News
           </a>
         </div>
       </div>

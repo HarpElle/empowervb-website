@@ -2,8 +2,100 @@
 import BaseLayout from '../components/layout/BaseLayout.astro';
 ---
 <BaseLayout>
-  <section class="py-16 text-center">
-    <h1 class="text-4xl font-bold mb-4">Media Gallery</h1>
-    <p class="text-lg">This is a placeholder for the Media page. Photos and videos coming soon!</p>
+  <!-- Hero Section -->
+  <section class="py-20 section-gradient">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="animate-slide-up">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-empower-navy">Media Gallery</h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto mb-8"></div>
+        <p class="text-xl md:text-2xl text-empower-navy/80 leading-relaxed">
+          Capturing moments of excellence, teamwork, and growth
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="card-gradient p-12 animate-scale-in">
+        <div class="mb-8">
+          <div class="w-20 h-20 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-navy">Coming Soon</h2>
+        </div>
+        
+        <div class="space-y-6 mb-8">
+          <p class="text-lg text-empower-navy/80 leading-relaxed">
+            Our media gallery is currently under development. Once our inaugural U15 team begins training and competing, this space will showcase the moments that define our journey.
+          </p>
+          <p class="text-lg text-empower-navy/80 leading-relaxed">
+            Here you’ll find action shots from practices and games, team building moments, community events, and the stories of growth that make Empower VB special.
+          </p>
+        </div>
+
+        <!-- What to Expect -->
+        <div class="bg-empower-light-gray/30 rounded-2xl p-8 mb-8">
+          <h3 class="text-xl font-bold text-empower-navy mb-6">What You Can Expect</h3>
+          <div class="grid md:grid-cols-2 gap-6 text-left">
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-empower-coral mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-empower-navy/80">Training session highlights</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-empower-coral mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-empower-navy/80">Competition photography</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-empower-coral mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-empower-navy/80">Team building moments</span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-empower-coral mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-empower-navy/80">Community involvement</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-empower-coral mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-empower-navy/80">Behind-the-scenes content</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-empower-coral mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-empower-navy/80">Player spotlights</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="space-y-4">
+          <p class="text-empower-coral font-semibold text-lg">
+            Want to be part of the story?
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/interest" class="btn-primary">Join Our Team</a>
+            <a href="/contact" class="btn-outline">Stay Updated</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout> 

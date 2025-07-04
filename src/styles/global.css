@@ -34,6 +34,72 @@
     @apply text-base md:text-lg leading-relaxed;
   }
   
+  /* Enhanced reading experience */
+  .prose {
+    @apply text-empower-navy/90;
+  }
+  
+  .prose h2 {
+    @apply relative text-empower-navy font-bold text-2xl md:text-3xl mt-12 mb-6 pb-3 border-b border-empower-light-gray/30;
+  }
+  
+  .prose h3 {
+    @apply text-empower-navy font-semibold text-xl md:text-2xl mt-8 mb-4;
+  }
+  
+  .prose h4 {
+    @apply text-empower-navy font-semibold text-lg md:text-xl mt-6 mb-3;
+  }
+  
+  .prose p {
+    @apply text-lg leading-relaxed mb-6 text-empower-navy/85;
+  }
+  
+  .prose blockquote {
+    @apply relative border-l-4 border-empower-coral pl-6 py-4 my-8 bg-gradient-to-r from-empower-coral/5 to-transparent rounded-r-lg italic;
+  }
+  
+  .prose blockquote::before {
+    content: '"';
+    @apply absolute -top-2 -left-2 text-6xl text-empower-coral/30 font-bold leading-none;
+  }
+  
+  .prose strong {
+    @apply text-empower-navy font-semibold;
+  }
+  
+  .prose em {
+    @apply text-empower-mid-gray italic;
+  }
+  
+  .prose ul {
+    @apply space-y-2 my-6;
+  }
+  
+  .prose ol {
+    @apply space-y-2 my-6;
+  }
+  
+  .prose li {
+    @apply text-lg leading-relaxed text-empower-navy/85;
+  }
+  
+  .prose a {
+    @apply text-empower-coral font-medium underline decoration-empower-coral/50 decoration-2 underline-offset-2 hover:decoration-empower-coral hover:text-empower-coral/80 transition-all duration-300;
+  }
+  
+  .prose code {
+    @apply bg-empower-light-gray/50 text-empower-coral px-2 py-1 rounded font-mono text-sm;
+  }
+  
+  .prose pre {
+    @apply bg-empower-navy text-white p-6 rounded-xl overflow-x-auto my-8;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent text-white p-0;
+  }
+  
   /* Focus states */
   *:focus {
     @apply outline-none ring-2 ring-empower-coral ring-offset-2;
@@ -145,6 +211,15 @@
   .icon-hover {
     @apply transition-all duration-300 hover:scale-110 hover:text-empower-coral;
   }
+  
+  /* Enhanced readability utilities */
+  .reading-width {
+    max-width: 65ch;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
 }
 
 @layer utilities {
@@ -172,6 +247,11 @@
   
   .glass-dark {
     @apply bg-black/10 backdrop-blur-md border border-black/20;
+  }
+  
+  /* Scroll margin for anchor links */
+  .scroll-mt-nav {
+    scroll-margin-top: 5rem;
   }
 }
 
