@@ -1,0 +1,63 @@
+---
+// This form collects interest before official tryout announcements
+---
+<form 
+  id="interest-form" 
+  class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg"
+  data-netlify="true"
+  name="volleyball-interest"
+>
+  <h3 class="text-2xl font-bold text-empower-navy mb-6">
+    Join Our Interest List
+  </h3>
+  <p class="text-empower-mid-gray mb-6">
+    Be the first to know when U15 Nationals tryouts are announced!
+  </p>
+  
+  <div class="space-y-4">
+    <input 
+      type="text" 
+      name="player_name" 
+      placeholder="Player Name" 
+      required
+      class="w-full px-4 py-2 border border-empower-light-gray rounded"
+    />
+    
+    <input 
+      type="email" 
+      name="parent_email" 
+      placeholder="Parent Email" 
+      required
+      class="w-full px-4 py-2 border border-empower-light-gray rounded"
+    />
+    
+    <input 
+      type="tel" 
+      name="phone" 
+      placeholder="Phone Number"
+      class="w-full px-4 py-2 border border-empower-light-gray rounded"
+    />
+    
+    <select 
+      name="current_grade" 
+      required
+      class="w-full px-4 py-2 border border-empower-light-gray rounded"
+    >
+      <option value="">Current Grade (2024-25)</option>
+      <option value="7">7th Grade</option>
+      <option value="8">8th Grade</option>
+      <option value="9">9th Grade</option>
+    </select>
+    
+    <textarea 
+      name="volleyball_experience" 
+      placeholder="Brief volleyball experience"
+      rows="3"
+      class="w-full px-4 py-2 border border-empower-light-gray rounded"
+    ></textarea>
+    
+    <button type="submit" class="btn-primary w-full">
+      Join Interest List
+    </button>
+  </div>
+</form> 
