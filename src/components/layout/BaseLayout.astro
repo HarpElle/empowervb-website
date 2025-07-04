@@ -6,7 +6,7 @@ const description = 'Empowering Female Athletes Through Excellence';
 const siteUrl = 'https://empowervb.com';
 
 // Get current page for active navigation
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 <html lang="en">
   <head>

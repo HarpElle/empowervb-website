@@ -196,7 +196,7 @@
   
   /* Navigation styles */
   .nav-link {
-    @apply relative font-semibold text-white hover:text-empower-coral transition-colors duration-300;
+    @apply relative font-semibold text-white hover:text-empower-coral transition-colors duration-300 py-3 px-2;
   }
   
   .nav-link.active {
@@ -204,7 +204,7 @@
   }
   
   .nav-link.active::after {
-    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-empower-coral;
+    @apply content-[''] absolute bottom-1 left-0 w-full h-2 bg-empower-coral rounded-full shadow-lg;
   }
   
   /* Icon styles */
