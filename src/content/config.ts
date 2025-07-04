@@ -16,7 +16,7 @@ const news = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.date(),
+    date: z.string(),
     author: z.string().default('Empower VB Staff'),
     tags: z.array(z.string()),
     featured: z.boolean().default(false),

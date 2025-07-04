@@ -1,63 +1,205 @@
 ---
 // This form collects interest before official tryout announcements
 ---
-<form 
-  id="interest-form" 
-  class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg"
-  data-netlify="true"
-  name="volleyball-interest"
->
-  <h3 class="text-2xl font-bold text-empower-navy mb-6">
-    Join Our Interest List
-  </h3>
-  <p class="text-empower-mid-gray mb-6">
-    Be the first to know when U15 Nationals tryouts are announced!
-  </p>
-  
-  <div class="space-y-4">
-    <input 
-      type="text" 
-      name="player_name" 
-      placeholder="Player Name" 
-      required
-      class="w-full px-4 py-2 border border-empower-light-gray rounded"
-    />
+<div class="max-w-2xl mx-auto">
+  <form 
+    id="interest-form" 
+    class="card p-10 space-y-6"
+    action="https://formspree.io/f/mdkzjjle"
+    method="POST"
+  >
+    <!-- Form Header -->
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      </div>
+      <h3 class="text-2xl md:text-3xl font-bold text-empower-navy mb-4">
+        Pre-Register Your Interest
+      </h3>
+      <p class="text-empower-mid-gray text-lg">
+        Be the first to know when U15 Nationals tryouts are announced!
+      </p>
+    </div>
     
-    <input 
-      type="email" 
-      name="parent_email" 
-      placeholder="Parent Email" 
-      required
-      class="w-full px-4 py-2 border border-empower-light-gray rounded"
-    />
+    <input type="hidden" name="_redirect" value="/thank-you" />
     
-    <input 
-      type="tel" 
-      name="phone" 
-      placeholder="Phone Number"
-      class="w-full px-4 py-2 border border-empower-light-gray rounded"
-    />
+    <!-- Form Fields -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-2">
+        <label for="player_name" class="block text-sm font-semibold text-empower-navy">
+          Player Name *
+        </label>
+        <input 
+          type="text" 
+          id="player_name"
+          name="player_name" 
+          placeholder="Enter player's full name" 
+          required
+          class="form-input"
+        />
+      </div>
+      
+      <div class="space-y-2">
+        <label for="parent_name" class="block text-sm font-semibold text-empower-navy">
+          Parent/Guardian Name *
+        </label>
+        <input 
+          type="text" 
+          id="parent_name"
+          name="parent_name" 
+          placeholder="Enter parent/guardian name" 
+          required
+          class="form-input"
+        />
+      </div>
+    </div>
     
-    <select 
-      name="current_grade" 
-      required
-      class="w-full px-4 py-2 border border-empower-light-gray rounded"
-    >
-      <option value="">Current Grade (2024-25)</option>
-      <option value="7">7th Grade</option>
-      <option value="8">8th Grade</option>
-      <option value="9">9th Grade</option>
-    </select>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-2">
+        <label for="parent_email" class="block text-sm font-semibold text-empower-navy">
+          Email Address *
+        </label>
+        <input 
+          type="email" 
+          id="parent_email"
+          name="parent_email" 
+          placeholder="your.email@example.com" 
+          required
+          class="form-input"
+        />
+      </div>
+      
+      <div class="space-y-2">
+        <label for="phone" class="block text-sm font-semibold text-empower-navy">
+          Phone Number
+        </label>
+        <input 
+          type="tel" 
+          id="phone"
+          name="phone" 
+          placeholder="(555) 123-4567"
+          class="form-input"
+        />
+      </div>
+    </div>
     
-    <textarea 
-      name="volleyball_experience" 
-      placeholder="Brief volleyball experience"
-      rows="3"
-      class="w-full px-4 py-2 border border-empower-light-gray rounded"
-    ></textarea>
+    <div class="space-y-2">
+      <label for="current_grade" class="block text-sm font-semibold text-empower-navy">
+        Current Grade (2025-26 School Year) *
+      </label>
+      <div class="relative">
+        <select 
+          id="current_grade"
+          name="current_grade" 
+          required
+          class="form-select"
+        >
+          <option value="">Select current grade</option>
+          <option value="7">7th Grade</option>
+          <option value="8">8th Grade</option>
+          <option value="9">9th Grade</option>
+        </select>
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+          <svg class="w-4 h-4 text-empower-mid-gray" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
+    </div>
     
-    <button type="submit" class="btn-primary w-full">
-      Join Interest List
-    </button>
-  </div>
-</form> 
+    <div class="space-y-2">
+      <label for="volleyball_experience" class="block text-sm font-semibold text-empower-navy">
+        Volleyball Experience
+      </label>
+      <textarea 
+        id="volleyball_experience"
+        name="volleyball_experience" 
+        placeholder="Tell us about your volleyball experience (teams, positions, years played, etc.)"
+        rows="4"
+        class="form-textarea"
+      ></textarea>
+    </div>
+    
+    <!-- Privacy Notice -->
+    <div class="bg-empower-light-gray/50 rounded-xl p-4 text-sm text-empower-mid-gray">
+      <div class="flex items-start gap-2">
+        <svg class="w-4 h-4 text-empower-coral mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+        <p>
+          We respect your privacy. Your information will only be used to contact you about Empower VB opportunities and will never be shared with third parties.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Submit Button -->
+    <div class="pt-4">
+      <button type="submit" class="btn-primary w-full text-lg py-4 group">
+        <span class="flex items-center justify-center gap-2">
+          Submit Interest
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </span>
+      </button>
+    </div>
+    
+    <!-- Form Footer -->
+    <div class="text-center pt-4 border-t border-empower-light-gray">
+      <p class="text-sm text-empower-mid-gray">
+        Questions? Contact us at 
+        <a href="mailto:info@empowervb.com" class="text-empower-coral hover:underline font-semibold">
+          info@empowervb.com
+        </a>
+      </p>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Form enhancement script
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('interest-form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    if (form && submitBtn) {
+      // Add form validation feedback
+      const inputs = form.querySelectorAll('input[required], select[required]');
+      
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          if (this.value.trim() === '') {
+            this.classList.add('border-red-400');
+            this.classList.remove('border-empower-coral');
+          } else {
+            this.classList.remove('border-red-400');
+            this.classList.add('border-empower-coral');
+          }
+        });
+        
+        input.addEventListener('input', function() {
+          if (this.value.trim() !== '') {
+            this.classList.remove('border-red-400');
+            this.classList.add('border-empower-coral');
+          }
+        });
+      });
+      
+      // Submit button loading state
+      form.addEventListener('submit', function() {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Submitting...
+          </span>
+        `;
+      });
+    }
+  });
+</script> 

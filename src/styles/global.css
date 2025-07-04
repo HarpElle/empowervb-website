@@ -1,19 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-sans text-empower-navy bg-white;
+  html {
+    scroll-behavior: smooth;
   }
-  h1, h2, h3 {
-    @apply font-bold text-empower-navy;
+  
+  body {
+    @apply font-sans text-empower-navy bg-white antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Typography hierarchy */
+  h1 {
+    @apply font-bold text-empower-navy text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+  
+  h2 {
+    @apply font-bold text-empower-navy text-2xl md:text-3xl lg:text-4xl leading-tight;
+  }
+  
+  h3 {
+    @apply font-semibold text-empower-navy text-xl md:text-2xl leading-snug;
+  }
+  
+  h4 {
+    @apply font-semibold text-empower-navy text-lg md:text-xl leading-snug;
+  }
+  
+  p {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+  
+  /* Focus states */
+  *:focus {
+    @apply outline-none ring-2 ring-empower-coral ring-offset-2;
+  }
+  
+  /* Selection styles */
+  ::selection {
+    @apply bg-empower-coral text-white;
   }
 }
 
 @layer components {
+  /* Button system */
   .btn-primary {
-    @apply bg-empower-coral text-white px-6 py-3 rounded-lg font-semibold 
-           hover:bg-opacity-90 transition-all duration-200;
+    @apply bg-gradient-to-r from-empower-coral to-empower-coral/90 text-white px-8 py-4 rounded-xl font-semibold text-base md:text-lg
+           hover:from-empower-coral/90 hover:to-empower-coral hover:shadow-lg hover:shadow-empower-coral/25 
+           transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-empower-navy border-2 border-empower-navy px-8 py-4 rounded-xl font-semibold text-base md:text-lg
+           hover:bg-empower-navy hover:text-white hover:shadow-lg hover:shadow-empower-navy/25
+           transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-semibold text-base md:text-lg
+           hover:bg-white hover:text-empower-navy hover:shadow-lg hover:shadow-white/25
+           transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  /* Card system */
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  /* Form elements */
+  .form-input {
+    @apply w-full px-4 py-3 border-2 border-empower-light-gray rounded-xl text-base
+           focus:border-empower-coral focus:ring-0 transition-colors duration-200
+           placeholder:text-empower-mid-gray;
+  }
+  
+  .form-select {
+    @apply w-full px-4 py-3 border-2 border-empower-light-gray rounded-xl text-base
+           focus:border-empower-coral focus:ring-0 transition-colors duration-200
+           bg-white appearance-none cursor-pointer;
+  }
+  
+  .form-textarea {
+    @apply w-full px-4 py-3 border-2 border-empower-light-gray rounded-xl text-base
+           focus:border-empower-coral focus:ring-0 transition-colors duration-200
+           placeholder:text-empower-mid-gray resize-y;
+  }
+  
+  /* Section backgrounds */
+  .section-gradient {
+    @apply bg-gradient-to-br from-empower-light-gray to-white;
+  }
+  
+  .section-navy {
+    @apply bg-gradient-to-br from-empower-navy to-empower-navy/90;
+  }
+  
+  /* Text effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-empower-coral to-empower-lilac bg-clip-text text-transparent;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+  
+  /* Navigation styles */
+  .nav-link {
+    @apply relative font-semibold text-white hover:text-empower-coral transition-colors duration-300;
+  }
+  
+  .nav-link.active {
+    @apply text-empower-coral;
+  }
+  
+  .nav-link.active::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-empower-coral;
+  }
+  
+  /* Icon styles */
+  .icon-hover {
+    @apply transition-all duration-300 hover:scale-110 hover:text-empower-coral;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .gradient-coral {
+    background: linear-gradient(135deg, #FF7F50 0%, #FF9A7A 100%);
+  }
+  
+  .gradient-lilac {
+    background: linear-gradient(135deg, #C8A2C8 0%, #D4B4D4 100%);
+  }
+  
+  .gradient-navy {
+    background: linear-gradient(135deg, #1C1F4C 0%, #2A2E5C 100%);
+  }
+  
+  .gradient-hero {
+    background: linear-gradient(135deg, #1C1F4C 0%, #2A2E5C 50%, #FF7F50 100%);
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-black/20;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive text utilities */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
   }
 }

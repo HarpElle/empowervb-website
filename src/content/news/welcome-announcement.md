@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Empower Volleyball Club"
-date: 2025-01-01
+date: "2025-07-01"
 author: "Empower VB Staff"
 tags: ["announcement", "welcome", "club-launch"]
 featured: true

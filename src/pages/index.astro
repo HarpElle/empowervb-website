@@ -3,76 +3,239 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
 import InterestForm from '../components/forms/InterestForm.astro';
 ---
 <BaseLayout>
-  <!-- Hero Section -->
-  <section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center bg-empower-navy text-white py-20">
-    <div class="absolute inset-0 bg-gradient-to-br from-empower-navy to-empower-dark-gray opacity-90"></div>
-    <div class="relative z-10">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Empower Volleyball Club</h1>
-      <p class="text-xl md:text-2xl mb-8 font-semibold">Elevate Your Game, Strengthen Your Spirit</p>
-      <a href="#interest" class="btn-primary inline-block">Join Our Interest List</a>
+  <!-- Modern Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    <!-- Background Image with Modern Overlay -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/teams/hero.webp');"></div>
+    
+    <!-- Modern Gradient Overlay for Better Text Visibility -->
+    <div class="absolute inset-0 bg-gradient-to-br from-empower-navy/90 via-empower-navy/70 to-empower-coral/80"></div>
+    
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-empower-coral/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-empower-lilac/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center animate-fade-in">
+      <!-- Main Heading with Enhanced Typography -->
+      <div class="mb-8">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 text-shadow-lg">
+          <span class="block">Empower</span>
+          <span class="block text-gradient">Volleyball Club</span>
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto mb-6"></div>
+      </div>
+      
+      <!-- Tagline -->
+      <p class="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-6 text-shadow">
+        Elevate Your Game, Strengthen Your Spirit
+      </p>
+      
+      <!-- Description -->
+      <p class="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed text-shadow">
+        Join Southeastern Wisconsin's newest premier volleyball club as we launch our inaugural U15 Nationals team. 
+        <span class="text-empower-coral font-semibold">Be part of something special from day one.</span>
+      </p>
+      
+      <!-- Call-to-Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+        <a href="#interest" class="btn-primary text-lg px-10 py-5 animate-scale-in">
+          Pre-Register Your Interest
+        </a>
+        <a href="/about" class="btn-outline text-lg px-10 py-5 animate-scale-in" style="animation-delay: 0.2s;">
+          Learn Our Story
+        </a>
+      </div>
+      
+      <!-- Key Stats/Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="glass rounded-2xl p-6 text-center animate-slide-up">
+          <div class="text-3xl font-bold text-empower-coral mb-2">2025</div>
+          <div class="text-white font-semibold">Founding Year</div>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center animate-slide-up" style="animation-delay: 0.1s;">
+          <div class="text-3xl font-bold text-empower-coral mb-2">U15</div>
+          <div class="text-white font-semibold">Inaugural Team</div>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="text-3xl font-bold text-empower-coral mb-2">Elite</div>
+          <div class="text-white font-semibold">Training Level</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
     </div>
   </section>
 
-  <!-- Mission Section -->
-  <section class="py-16 bg-white text-empower-navy">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
-      <p class="text-lg mb-4">Empowering female athletes through excellence, teamwork, and character development in a supportive family environment.</p>
-      <span class="italic text-empower-lilac">"Therefore encourage one another and build each other up, just as in fact you are doing."<br/> <span class="text-empower-mid-gray">1 Thessalonians 5:11</span></span>
+  <!-- Coach Recruitment Banner (Temporary) -->
+  <section class="py-4 bg-gradient-to-r from-empower-coral to-empower-coral/90 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <svg class="w-8 h-8 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2M7 7h10M7 11h4m6 0h2M7 15h10" />
+          </svg>
+          <div>
+            <div class="font-bold text-lg">Calling All Coaches!</div>
+            <div class="text-sm text-white/90">Join our founding coaching staff for the 2025 season</div>
+          </div>
+        </div>
+        <a 
+          href="mailto:info@empowervb.com?subject=Coaching%20Interest%20-%20Empower%20VB&body=Hi%20Empower%20VB%20team,%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20coaching%20opportunities%20with%20your%20inaugural%20U15%20team.%0D%0A%0D%0APlease%20share%20more%20details%20about:%0D%0A-%20Coaching%20positions%20available%0D%0A-%20Time%20commitments%0D%0A-%20Experience%20requirements%0D%0A-%20Application%20process%0D%0A%0D%0AThank%20you!"
+          class="btn-outline border-white text-white hover:bg-white hover:text-empower-coral whitespace-nowrap"
+        >
+          Express Interest
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Why Empower VB Section -->
-  <section class="py-16 bg-empower-light-gray">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Why Empower VB?</h2>
+  <!-- Mission Section with Enhanced Design -->
+  <section class="py-20 section-gradient">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="animate-slide-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-empower-navy">Our Mission</h2>
+        <p class="text-lg md:text-xl mb-10 text-empower-navy/80 leading-relaxed">
+          Empowering female athletes through excellence, teamwork, and character development in a supportive family environment.
+        </p>
+      </div>
+      
+      <div class="card-gradient p-10 max-w-3xl mx-auto animate-scale-in">
+        <div class="mb-6">
+          <svg class="w-16 h-16 text-empower-coral mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </div>
+        <blockquote class="text-2xl md:text-3xl font-bold text-empower-coral mb-4">
+          "ENCOURAGE ONE ANOTHER AND BUILD EACH OTHER UP"
+        </blockquote>
+        <cite class="text-empower-mid-gray text-lg">1 Thessalonians 5:11</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Empower VB Section with Modern Cards -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16 animate-slide-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-empower-navy">Why Empower VB?</h2>
+        <p class="text-lg md:text-xl text-empower-navy/70 max-w-3xl mx-auto">
+          Discover what makes our volleyball club different and why families choose us for their daughters' athletic journey.
+        </p>
+      </div>
+      
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-          <div class="mb-4 text-empower-coral">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="card p-8 text-center group animate-slide-up">
+          <div class="mb-6 relative">
+            <div class="w-20 h-20 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
           </div>
-          <h3 class="font-bold text-xl mb-2">Elite Training</h3>
-          <p class="text-empower-mid-gray text-center">High-level coaching, skill development, and competitive play for serious athletes.</p>
+          <h3 class="text-2xl font-bold mb-4 text-empower-navy">Elite Training</h3>
+          <p class="text-empower-mid-gray leading-relaxed">
+            High-level coaching, skill development, and competitive play for serious athletes who want to excel.
+          </p>
         </div>
-        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-          <div class="mb-4 text-empower-coral">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12V4"/></svg>
+        
+        <div class="card p-8 text-center group animate-slide-up" style="animation-delay: 0.1s;">
+          <div class="mb-6 relative">
+            <div class="w-20 h-20 bg-gradient-to-br from-empower-lilac to-empower-lilac/80 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
           </div>
-          <h3 class="font-bold text-xl mb-2">Family Environment</h3>
-          <p class="text-empower-mid-gray text-center">Supportive, inclusive, and positive team culture for players and families.</p>
+          <h3 class="text-2xl font-bold mb-4 text-empower-navy">Family Environment</h3>
+          <p class="text-empower-mid-gray leading-relaxed">
+            Supportive, inclusive, and positive team culture that extends beyond the court to build lasting relationships.
+          </p>
         </div>
-        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-          <div class="mb-4 text-empower-coral">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+        
+        <div class="card p-8 text-center group animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="mb-6 relative">
+            <div class="w-20 h-20 bg-gradient-to-br from-empower-navy to-empower-navy/80 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
           </div>
-          <h3 class="font-bold text-xl mb-2">Character Development</h3>
-          <p class="text-empower-mid-gray text-center">Building leadership, integrity, and confidence on and off the court.</p>
+          <h3 class="text-2xl font-bold mb-4 text-empower-navy">Character Development</h3>
+          <p class="text-empower-mid-gray leading-relaxed">
+            Building leadership, integrity, and confidence that empowers athletes both on and off the court.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interest Form Section -->
-  <section id="interest" class="py-16 bg-white">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-2">Future U15 Nationals Players</h2>
-      <p class="text-center text-empower-mid-gray mb-6">Official tryout announcements coming August 2025</p>
-      <InterestForm />
+  <!-- Interest Form Section with Enhanced Design -->
+  <section id="interest" class="py-20 section-gradient">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12 animate-slide-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-empower-navy">Future U15 Nationals Players</h2>
+        <p class="text-lg md:text-xl text-empower-navy/70 mb-8">
+          Official tryout announcements coming August 2025
+        </p>
+        <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto"></div>
+      </div>
+      
+      <div class="animate-scale-in">
+        <InterestForm />
+      </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="py-12 bg-empower-navy text-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-2">Contact Us</h2>
-      <p class="mb-4">Email: <a href="mailto:info@empowervb.com" class="underline hover:text-empower-coral">info@empowervb.com</a></p>
-      <div class="flex justify-center gap-6 mt-4">
-        <a href="#" aria-label="Instagram" class="hover:text-empower-coral">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-        </a>
-        <a href="#" aria-label="Facebook" class="hover:text-empower-coral">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
+  <!-- Single Contact Section with Better Design -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="animate-slide-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-navy">Ready to Get Started?</h2>
+        
+        <!-- Improved text layout with better line breaks -->
+        <div class="space-y-4 mb-10">
+          <p class="text-lg md:text-xl text-empower-navy/80">
+            Have questions or want to learn more?
+          </p>
+          <p class="text-lg md:text-xl text-empower-navy/80">
+            We're here to help you begin your journey with Empower VB.
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
+          <a href="mailto:info@empowervb.com" class="flex items-center gap-3 text-lg text-empower-navy hover:text-empower-coral transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            info@empowervb.com
+          </a>
+          <a href="/contact" class="btn-secondary">
+            Contact Us
+          </a>
+        </div>
+        
+        <div class="flex justify-center gap-6">
+          <a href="#" aria-label="Instagram" class="icon-hover text-empower-navy">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="icon-hover text-empower-navy">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>

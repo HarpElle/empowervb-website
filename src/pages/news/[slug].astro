@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { parseISO, format } from 'date-fns';
+
+export async function getStaticPaths() {
+  const allNews = await getCollection('news');
+  return allNews.map(article => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+const { article } = Astro.props;
+---
+<BaseLayout>
+  <section class="py-16 max-w-2xl mx-auto">
+    <div class="mb-6 text-empower-mid-gray flex items-center gap-3 text-sm">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      <time>{format(parseISO(article.data.date), 'MMMM d, yyyy')}</time>
+      <span class="mx-2">•</span>
+      <span>By {article.data.author}</span>
+      {article.data.featured && (
+        <span class="ml-2 bg-gradient-to-r from-empower-coral to-empower-coral/80 text-white px-3 py-1 rounded-full text-xs font-semibold">Featured</span>
+      )}
+    </div>
+    <h1 class="text-4xl font-bold mb-4 text-empower-navy">{article.data.title}</h1>
+    {article.data.tags && article.data.tags.length > 0 && (
+      <div class="mb-6 flex flex-wrap gap-2">
+        {article.data.tags.map(tag => (
+          <span class="bg-empower-light-gray text-empower-navy px-3 py-1 rounded-full text-xs font-medium" key={tag}>{tag}</span>
+        ))}
+      </div>
+    )}
+    <div class="prose prose-lg max-w-none text-empower-navy/90">
+      {article.body}
+    </div>
+  </section>
+</BaseLayout> 
