@@ -21,9 +21,9 @@ import InterestForm from '../components/forms/InterestForm.astro';
     <div class="relative z-10 max-w-6xl mx-auto px-4 text-center animate-fade-in">
       <!-- Main Heading with Enhanced Typography -->
       <div class="mb-8">
-        <h1 class="text-9xl font-bold text-white leading-[1.3]">
-          <span class="block">Empower</span>
-          <span class="block text-gradient relative overflow-visible pb-12 -mt-4 text-7xl">Volleyball Club</span>
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-[1.3]">
+          <span class="block mb-2">Empower</span>
+          <span class="block text-gradient relative overflow-visible pb-12 text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl">Volleyball Club</span>
         </h1>
         <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto mb-8 mt-0"></div>
       </div>
@@ -52,19 +52,34 @@ import InterestForm from '../components/forms/InterestForm.astro';
         </a>
       </div>
       
-      <!-- Key Stats/Features -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <!-- Core Values Highlights -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <div class="glass rounded-2xl p-6 text-center animate-slide-up">
-          <div class="text-3xl font-bold text-empower-coral mb-2">2025</div>
-          <div class="text-white font-semibold">Founding Year</div>
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-empower-coral mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="text-2xl font-bold text-empower-coral mb-2">Excellence</div>
+          <div class="text-white/90 text-sm leading-relaxed">Commitment to the highest standards in training and competition</div>
         </div>
         <div class="glass rounded-2xl p-6 text-center animate-slide-up" style="animation-delay: 0.1s;">
-          <div class="text-3xl font-bold text-empower-coral mb-2">U15</div>
-          <div class="text-white font-semibold">Inaugural Team</div>
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-empower-coral mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div class="text-2xl font-bold text-empower-coral mb-2">Family</div>
+          <div class="text-white/90 text-sm leading-relaxed">Supportive environment where athletes feel valued and connected</div>
         </div>
         <div class="glass rounded-2xl p-6 text-center animate-slide-up" style="animation-delay: 0.2s;">
-          <div class="text-3xl font-bold text-empower-coral mb-2">Elite</div>
-          <div class="text-white font-semibold">Training Level</div>
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-empower-coral mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <div class="text-2xl font-bold text-empower-coral mb-2">Empowerment</div>
+          <div class="text-white/90 text-sm leading-relaxed">Building confidence and leadership in every athlete</div>
         </div>
       </div>
     </div>
