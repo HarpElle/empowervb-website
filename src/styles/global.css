@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,29 +9,29 @@
   }
   
   body {
-    @apply font-sans text-empower-navy bg-white antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply font-body text-empower-navy bg-white antialiased;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
   }
   
   /* Typography hierarchy */
   h1 {
-    @apply font-bold text-empower-navy text-4xl md:text-5xl lg:text-6xl leading-tight;
+    @apply font-heading font-bold text-empower-coral text-4xl md:text-5xl lg:text-6xl leading-tight;
   }
   
   h2 {
-    @apply font-bold text-empower-navy text-2xl md:text-3xl lg:text-4xl leading-tight;
+    @apply font-heading font-bold text-empower-coral text-2xl md:text-3xl lg:text-4xl leading-tight;
   }
   
   h3 {
-    @apply font-semibold text-empower-navy text-xl md:text-2xl leading-snug;
+    @apply font-body font-semibold text-empower-navy text-xl md:text-2xl leading-snug;
   }
   
   h4 {
-    @apply font-semibold text-empower-navy text-lg md:text-xl leading-snug;
+    @apply font-body font-semibold text-empower-navy text-lg md:text-xl leading-snug;
   }
   
   p {
-    @apply text-base md:text-lg leading-relaxed;
+    @apply font-body text-base md:text-lg leading-relaxed;
   }
   
   /* Enhanced reading experience */
@@ -40,19 +40,19 @@
   }
   
   .prose h2 {
-    @apply relative text-empower-navy font-bold text-2xl md:text-3xl mt-12 mb-6 pb-3 border-b border-empower-light-gray/30;
+    @apply relative text-empower-coral font-heading font-bold text-2xl md:text-3xl mt-12 mb-6 pb-3 border-b border-empower-light-gray/30;
   }
   
   .prose h3 {
-    @apply text-empower-navy font-semibold text-xl md:text-2xl mt-8 mb-4;
+    @apply text-empower-navy font-body font-semibold text-xl md:text-2xl mt-8 mb-4;
   }
   
   .prose h4 {
-    @apply text-empower-navy font-semibold text-lg md:text-xl mt-6 mb-3;
+    @apply text-empower-navy font-body font-semibold text-lg md:text-xl mt-6 mb-3;
   }
   
   .prose p {
-    @apply text-lg leading-relaxed mb-6 text-empower-navy/85;
+    @apply font-body text-lg leading-relaxed mb-6 text-empower-navy/85;
   }
   
   .prose blockquote {
@@ -81,7 +81,7 @@
   }
   
   .prose li {
-    @apply text-lg leading-relaxed text-empower-navy/85;
+    @apply font-body text-lg leading-relaxed text-empower-navy/85;
   }
   
   .prose a {
@@ -127,7 +127,13 @@
   
   .btn-outline {
     @apply bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-semibold text-base md:text-lg
-           hover:bg-white hover:text-empower-navy hover:shadow-lg hover:shadow-white/25
+           hover:bg-white hover:text-empower-coral hover:shadow-lg hover:shadow-white/25
+           transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-lilac {
+    @apply bg-gradient-to-r from-empower-lilac to-empower-lilac/90 text-white px-8 py-4 rounded-xl font-semibold text-base md:text-lg
+           hover:from-empower-lilac/90 hover:to-empower-lilac hover:shadow-lg hover:shadow-empower-lilac/25 
            transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0;
   }
   
@@ -138,6 +144,19 @@
   
   .card-gradient {
     @apply bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  /* Color-themed card variants */
+  .card-coral {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-empower-coral;
+  }
+  
+  .card-lilac {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-empower-lilac;
+  }
+  
+  .card-navy {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-empower-navy;
   }
   
   /* Form elements */
@@ -166,6 +185,10 @@
   
   .section-navy {
     @apply bg-gradient-to-br from-empower-navy to-empower-navy/90;
+  }
+  
+  .section-lilac {
+    @apply bg-gradient-to-br from-empower-lilac/10 to-empower-lilac/5;
   }
   
   /* Text effects */
@@ -219,6 +242,23 @@
   
   .glass-card {
     @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
+  
+  /* Quicksand accent typography utilities */
+  .accent-text {
+    @apply font-accent font-semibold;
+  }
+  
+  .accent-heading {
+    @apply font-accent font-bold;
+  }
+  
+  .scripture-quote {
+    @apply font-accent text-2xl md:text-3xl font-bold text-empower-coral leading-tight mb-2;
+  }
+  
+  .scripture-citation {
+    @apply font-accent text-lg text-empower-lilac font-medium italic;
   }
 }
 

@@ -6,10 +6,10 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
   <section class="py-20 section-gradient">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <div class="animate-slide-up">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-empower-navy">Get in Touch</h1>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-empower-coral">Contact Us</h1>
         <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto mb-8"></div>
         <p class="text-xl md:text-2xl text-empower-navy/80 leading-relaxed">
-          We’re here to help you begin your journey with Empower Volleyball Club
+          Get in touch with our team
         </p>
       </div>
     </div>
@@ -19,303 +19,231 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
   <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-16 animate-slide-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-navy">Contact Information</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-coral">Get In Touch</h2>
         <p class="text-lg text-empower-navy/70 max-w-3xl mx-auto">
-          Whether you’re interested in learning more about our program or ready to pre-register, we’re excited to connect with you.
+          Have questions about Empower Volleyball Club? We'd love to hear from you. Reach out to us through any of the channels below.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <!-- General Information -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Email -->
         <div class="card p-8 text-center group animate-slide-up">
           <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-.876 1.775l-7.125 5.7a2.25 2.25 0 01-2.748 0l-7.125-5.7A2.25 2.25 0 012.25 6.993V6.75" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-empower-navy mb-4">General Information</h3>
-          <div class="space-y-3">
-            <a href="mailto:info@empowervb.com" class="block text-empower-coral hover:text-empower-navy transition-colors font-medium">
-              info@empowervb.com
-            </a>
-            <a href="tel:12622353232" class="block text-empower-mid-gray hover:text-empower-coral transition-colors">
-              (262) 235-3232
-            </a>
-          </div>
+          <h3 class="text-xl font-bold text-empower-navy mb-4">Email</h3>
+          <p class="text-empower-mid-gray mb-4">
+            For general inquiries and questions
+          </p>
+          <a 
+            href="mailto:info@empowervb.com" 
+            class="text-empower-coral font-semibold hover:text-empower-coral/80 transition-colors"
+          >
+            info@empowervb.com
+          </a>
         </div>
 
-        <!-- Coaching Inquiries -->
+        <!-- Phone -->
         <div class="card p-8 text-center group animate-slide-up" style="animation-delay: 0.1s;">
-          <div class="w-16 h-16 bg-gradient-to-br from-empower-lilac to-empower-lilac/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2M7 7h10M7 11h4m6 0h2M7 15h10" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-empower-navy mb-4">Coaching Opportunities</h3>
-          <div class="space-y-3">
-            <a 
-              href="mailto:info@empowervb.com?subject=Coaching%20Interest%20-%20Empower%20VB&body=Hi%20Empower%20VB%20team,%0D%0A%0D%0AI’m%20interested%20in%20learning%20more%20about%20coaching%20opportunities%20with%20your%20inaugural%20U15%20team.%0D%0A%0D%0APlease%20share%20more%20details%20about:%0D%0A-%20Coaching%20positions%20available%0D%0A-%20Time%20commitments%0D%0A-%20Experience%20requirements%0D%0A-%20Application%20process%0D%0A%0D%0AThank%20you!"
-              class="block text-empower-coral hover:text-empower-navy transition-colors font-medium"
-            >
-              Coaching Inquiries
-            </a>
-            <p class="text-sm text-empower-mid-gray">Join our founding staff</p>
-          </div>
+          <h3 class="text-xl font-bold text-empower-navy mb-4">Phone</h3>
+          <p class="text-empower-mid-gray mb-4">
+            For urgent matters and direct contact
+          </p>
+          <a 
+            href="tel:+1-262-555-0123" 
+            class="text-empower-coral font-semibold hover:text-empower-coral/80 transition-colors"
+          >
+            (262) 555-0123
+          </a>
         </div>
 
         <!-- Location -->
-        <div class="card p-8 text-center group animate-slide-up lg:col-span-1 md:col-span-2 lg:col-start-auto md:col-start-1" style="animation-delay: 0.2s;">
-          <div class="w-16 h-16 bg-gradient-to-br from-empower-navy to-empower-navy/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+        <div class="card p-8 text-center group animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-empower-navy mb-4">Service Area</h3>
-          <div class="space-y-2">
-            <p class="text-empower-mid-gray">Southeastern Wisconsin</p>
-            <p class="text-sm text-empower-mid-gray">Greater Milwaukee Area</p>
-          </div>
+          <h3 class="text-xl font-bold text-empower-navy mb-4">Location</h3>
+          <p class="text-empower-mid-gray mb-4">
+            Serving Southeastern Wisconsin
+          </p>
+          <p class="text-empower-coral font-semibold">
+            Elm Grove, WI
+          </p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Facility Information -->
-      <div class="card p-8 animate-slide-up">
-        <div class="flex items-start gap-6">
-          <div class="w-12 h-12 bg-gradient-to-br from-empower-coral to-empower-lilac rounded-xl flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2M7 7h10M7 11h4m6 0h2M7 15h10" />
-            </svg>
+  <!-- Contact Form Section -->
+  <section class="py-20 section-gradient">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16 animate-slide-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-coral">Send Us a Message</h2>
+        <p class="text-lg text-empower-navy/70">
+          Have a specific question or want to learn more? Fill out the form below and we'll get back to you as soon as possible.
+        </p>
+      </div>
+
+      <div class="card p-8 animate-slide-up" style="animation-delay: 0.1s;">
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="firstName" class="block text-sm font-semibold text-empower-navy mb-2">
+                First Name *
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+                class="w-full px-4 py-3 border border-empower-light-gray rounded-xl focus:ring-2 focus:ring-empower-coral focus:border-transparent transition-all duration-300"
+                placeholder="Enter your first name"
+              />
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm font-semibold text-empower-navy mb-2">
+                Last Name *
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                required
+                class="w-full px-4 py-3 border border-empower-light-gray rounded-xl focus:ring-2 focus:ring-empower-coral focus:border-transparent transition-all duration-300"
+                placeholder="Enter your last name"
+              />
+            </div>
           </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-sm font-semibold text-empower-navy mb-2">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-empower-light-gray rounded-xl focus:ring-2 focus:ring-empower-coral focus:border-transparent transition-all duration-300"
+                placeholder="Enter your email address"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-empower-navy mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="w-full px-4 py-3 border border-empower-light-gray rounded-xl focus:ring-2 focus:ring-empower-coral focus:border-transparent transition-all duration-300"
+                placeholder="Enter your phone number"
+              />
+            </div>
+          </div>
+
           <div>
-            <h3 class="text-xl font-bold text-empower-navy mb-3">Primary Training Location</h3>
-            <p class="text-empower-mid-gray mb-2"><span class="font-medium">Elm Grove Lutheran Church</span> <span class="italic">(Pending Final Confirmation)</span></p>
-            <p class="text-empower-mid-gray mb-3">945 Terrace Dr, Elm Grove, WI 53122</p>
-            <a href="https://egl.org" target="_blank" class="text-empower-coral hover:text-empower-navy transition-colors">
-              Learn more about EGL →
-            </a>
-            <p class="text-sm text-empower-mid-gray italic mt-3">
-              We’re in the final stages of securing this facility for our training needs and will confirm details soon.
-            </p>
+            <label for="subject" class="block text-sm font-semibold text-empower-navy mb-2">
+              Subject *
+            </label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-3 border border-empower-light-gray rounded-xl focus:ring-2 focus:ring-empower-coral focus:border-transparent transition-all duration-300"
+            >
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="tryouts">Tryout Information</option>
+              <option value="coaching">Coaching Opportunities</option>
+              <option value="partnership">Partnership Opportunities</option>
+              <option value="other">Other</option>
+            </select>
           </div>
-        </div>
+
+          <div>
+            <label for="message" class="block text-sm font-semibold text-empower-navy mb-2">
+              Message *
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              class="w-full px-4 py-3 border border-empower-light-gray rounded-xl focus:ring-2 focus:ring-empower-coral focus:border-transparent transition-all duration-300 resize-none"
+              placeholder="Tell us how we can help you..."
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn-primary px-8 py-4 text-lg"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-20 section-gradient">
+  <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-16 animate-slide-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-navy">Frequently Asked Questions</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-coral">Frequently Asked Questions</h2>
         <p class="text-lg text-empower-navy/70">
-          Here are answers to the most common questions we receive from families.
+          Quick answers to common questions
         </p>
       </div>
 
       <div class="space-y-6">
-        <!-- FAQ Item 1 -->
-        <div class="card p-8 animate-slide-up">
-          <h3 class="text-lg font-bold text-empower-navy mb-3">When will official tryout information be available?</h3>
+        <div class="card p-6 animate-slide-up">
+          <h3 class="text-lg font-bold text-empower-navy mb-3">
+            When will tryouts be held?
+          </h3>
           <p class="text-empower-mid-gray leading-relaxed">
-            We’ll release specific tryout dates, locations, and registration details on August 1st, 2025—the earliest we can officially operate within Badger Region volleyball.
+            Tryouts for our inaugural U15 team will be held in August 2025. Pre-registered families will receive priority access to tryout information and registration details.
           </p>
         </div>
 
-        <!-- FAQ Item 2 -->
-        <div class="card p-8 animate-slide-up" style="animation-delay: 0.1s;">
-          <h3 class="text-lg font-bold text-empower-navy mb-3">What ages are you currently accepting?</h3>
+        <div class="card p-6 animate-slide-up" style="animation-delay: 0.1s;">
+          <h3 class="text-lg font-bold text-empower-navy mb-3">
+            What age group are you targeting?
+          </h3>
           <p class="text-empower-mid-gray leading-relaxed">
-            Our inaugural team will be U15 Girls (typically ages 13-15, depending on birth year cutoffs).
+            We're starting with a U15 Nationals team, which typically includes athletes who will be 15 years old or younger during the 2025-2026 season.
           </p>
         </div>
 
-        <!-- FAQ Item 3 -->
-        <div class="card p-8 animate-slide-up" style="animation-delay: 0.2s;">
-          <h3 class="text-lg font-bold text-empower-navy mb-3">How can I stay updated on club developments?</h3>
+        <div class="card p-6 animate-slide-up" style="animation-delay: 0.2s;">
+          <h3 class="text-lg font-bold text-empower-navy mb-3">
+            Where will training be held?
+          </h3>
           <p class="text-empower-mid-gray leading-relaxed">
-            Pre-register your interest through our contact form or email, and you’ll be among the first to receive all important updates and announcements.
+            We're finalizing our facility arrangements in the Elm Grove area. Specific location details will be announced as we get closer to our launch date.
           </p>
         </div>
 
-        <!-- FAQ Item 4 -->
-        <div class="card p-8 animate-slide-up" style="animation-delay: 0.3s;">
-          <h3 class="text-lg font-bold text-empower-navy mb-3">Do you welcome families from all backgrounds?</h3>
+        <div class="card p-6 animate-slide-up" style="animation-delay: 0.3s;">
+          <h3 class="text-lg font-bold text-empower-navy mb-3">
+            What makes Empower VB different from other clubs?
+          </h3>
           <p class="text-empower-mid-gray leading-relaxed">
-            Absolutely! While our values are informed by Christian principles, we welcome athletes and families from all backgrounds. Our focus is on building character, encouraging growth, and creating a positive environment where every athlete can flourish.
+            As a new club, we have the unique opportunity to build our culture from the ground up. We focus on individual attention, family-centered values, and a faith-informed approach that welcomes athletes of all backgrounds.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Information Availability Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12">
-        <!-- Available Now -->
-        <div class="card p-8 animate-slide-up">
-          <div class="text-center mb-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-empower-navy">Available Now</h3>
-          </div>
-          <ul class="space-y-3 text-empower-mid-gray">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-coral mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              Club mission, vision, and values
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-coral mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              General program philosophy and approach
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-coral mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              Timeline for official program launch
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-coral mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              Pre-registration process
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-coral mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              Coaching staff recruitment updates
-            </li>
-          </ul>
-        </div>
-
-        <!-- Available August 1st -->
-        <div class="card p-8 animate-slide-up" style="animation-delay: 0.1s;">
-          <div class="text-center mb-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-empower-lilac to-empower-lilac/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 4V7a2 2 0 012-2h4a2 2 0 012 2v4M8 7H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-2" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-empower-navy">Available August 1st</h3>
-          </div>
-          <ul class="space-y-3 text-empower-mid-gray">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-lilac mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Specific tryout dates and locations
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-lilac mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Registration procedures and requirements
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-lilac mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Detailed training schedules and season timeline
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-lilac mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Program costs and payment options
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-empower-lilac mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Complete coaching staff introductions
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Office Hours Section -->
-  <section class="py-20 section-gradient">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12 animate-slide-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-navy">Office Hours</h2>
-        <p class="text-lg text-empower-navy/70">
-          Starting August 1st, 2025
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Office Hours -->
-        <div class="card p-8 animate-slide-up">
-          <h3 class="text-xl font-bold text-empower-navy mb-6 text-center">Administrative Hours</h3>
-          <div class="space-y-4">
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-              <span class="text-empower-mid-gray font-medium">Monday - Friday</span>
-              <span class="text-empower-navy">9:00 AM - 5:00 PM</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-              <span class="text-empower-mid-gray font-medium">Saturday</span>
-              <span class="text-empower-navy">10:00 AM - 2:00 PM</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-              <span class="text-empower-mid-gray font-medium">Sunday</span>
-              <span class="text-empower-navy">Closed (Family Day!)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Current Status -->
-        <div class="card p-8 animate-slide-up" style="animation-delay: 0.1s;">
-          <h3 class="text-xl font-bold text-empower-navy mb-6 text-center">Current Status</h3>
-          <div class="text-center space-y-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <p class="text-empower-mid-gray leading-relaxed">
-              During our pre-launch phase, we’re available by appointment and respond to all inquiries promptly via email.
-            </p>
-            <p class="text-sm text-empower-navy font-medium">
-              Response time: 24-48 hours
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <div class="animate-slide-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-empower-navy">Ready to Connect?</h2>
-        <div class="space-y-6 mb-12">
-          <p class="text-lg text-empower-navy/80 leading-relaxed">
-            We believe that building relationships starts with conversation. Whether you’re ready to pre-register, have specific questions about our program, or simply want to learn more about what makes Empower Volleyball Club special, we’re here and excited to connect with you.
-          </p>
-          <p class="text-lg text-empower-coral font-semibold">
-            Remember, every champion started with a single step. We’re here to help your daughter take hers with confidence, support, and the unwavering belief that she can achieve extraordinary things both on and off the court.
-          </p>
-        </div>
-        
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="mailto:info@empowervb.com" class="btn-primary">
-            Send Us an Email
-          </a>
-          <a href="/interest" class="btn-secondary">
-            Pre-Register Interest
-          </a>
         </div>
       </div>
     </div>

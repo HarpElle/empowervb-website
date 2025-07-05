@@ -12,16 +12,19 @@ export default {
         'empower-dark-gray': '#525252',
       },
       fontFamily: {
-        'heading': ['Sports Invation', 'sans-serif'],
-        'body': ['Balegare', 'system-ui', 'sans-serif'],
+        'heading': ['Oswald', 'sans-serif'],
+        'body': ['Poppins', 'system-ui', 'sans-serif'],
+        'accent': ['Quicksand', 'sans-serif'],
       },
       typography: {
         DEFAULT: {
           css: {
             color: '#1C1F4C',
             maxWidth: 'none',
+            fontFamily: 'Poppins, system-ui, sans-serif',
             h1: {
-              color: '#1C1F4C',
+              color: '#FF7F50',
+              fontFamily: 'Oswald, sans-serif',
               fontWeight: '700',
               fontSize: '2.25rem',
               lineHeight: '2.5rem',
@@ -29,7 +32,8 @@ export default {
               marginBottom: '1.5rem',
             },
             h2: {
-              color: '#1C1F4C',
+              color: '#FF7F50',
+              fontFamily: 'Oswald, sans-serif',
               fontWeight: '600',
               fontSize: '1.875rem',
               lineHeight: '2.25rem',
@@ -38,6 +42,7 @@ export default {
             },
             h3: {
               color: '#1C1F4C',
+              fontFamily: 'Poppins, system-ui, sans-serif',
               fontWeight: '600',
               fontSize: '1.5rem',
               lineHeight: '2rem',
@@ -46,6 +51,7 @@ export default {
             },
             h4: {
               color: '#1C1F4C',
+              fontFamily: 'Poppins, system-ui, sans-serif',
               fontWeight: '600',
               fontSize: '1.25rem',
               lineHeight: '1.75rem',
@@ -172,5 +178,8 @@ export default {
     'glass',
     'glass-dark',
     'line-clamp-3',
+    'font-heading',
+    'font-body',
+    'font-accent',
   ],
 } 
