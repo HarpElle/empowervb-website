@@ -5,7 +5,7 @@
   <form 
     id="interest-form" 
     class="card p-10 space-y-6"
-    action="https://formspree.io/f/mdkzjjle"
+    action="/api/contact"
     method="POST"
   >
     <!-- Form Header -->
@@ -23,7 +23,8 @@
       </p>
     </div>
     
-    <input type="hidden" name="_redirect" value="/thank-you" />
+    <!-- Honeypot spam protection -->
+    <input type="checkbox" name="botcheck" style="display: none;">
     
     <!-- Form Fields -->
     <div class="grid md:grid-cols-2 gap-6">
@@ -58,13 +59,13 @@
     
     <div class="grid md:grid-cols-2 gap-6">
       <div class="space-y-2">
-        <label for="parent_email" class="block text-sm font-semibold text-empower-navy">
+        <label for="email" class="block text-sm font-semibold text-empower-navy">
           Email Address *
         </label>
         <input 
           type="email" 
-          id="parent_email"
-          name="parent_email" 
+          id="email"
+          name="email" 
           placeholder="your.email@example.com" 
           required
           class="form-input"
@@ -86,20 +87,20 @@
     </div>
     
     <div class="space-y-2">
-      <label for="current_grade" class="block text-sm font-semibold text-empower-navy">
+      <label for="grade" class="block text-sm font-semibold text-empower-navy">
         Current Grade (2025-26 School Year) *
       </label>
       <div class="relative">
         <select 
-          id="current_grade"
-          name="current_grade" 
+          id="grade"
+          name="grade" 
           required
           class="form-select"
         >
           <option value="">Select current grade</option>
-          <option value="7">7th Grade</option>
-          <option value="8">8th Grade</option>
-          <option value="9">9th Grade</option>
+          <option value="7th Grade">7th Grade</option>
+          <option value="8th Grade">8th Grade</option>
+          <option value="9th Grade">9th Grade</option>
         </select>
         <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
           <svg class="w-4 h-4 text-empower-mid-gray" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -110,12 +111,12 @@
     </div>
     
     <div class="space-y-2">
-      <label for="volleyball_experience" class="block text-sm font-semibold text-empower-navy">
+      <label for="experience" class="block text-sm font-semibold text-empower-navy">
         Volleyball Experience
       </label>
       <textarea 
-        id="volleyball_experience"
-        name="volleyball_experience" 
+        id="experience"
+        name="experience" 
         placeholder="Tell us about your volleyball experience (teams, positions, years played, etc.)"
         rows="4"
         class="form-textarea"

@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+---
+<BaseLayout 
+  title="Coaching Opportunities | Empower Volleyball Club"
+  description="Join our coaching staff at Empower Volleyball Club. We're seeking passionate, experienced coaches to help develop our U15 Nationals team in Southeastern Wisconsin."
+>
+  <!-- Hero Section -->
+  <section class="py-20 section-gradient">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="animate-slide-up">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-empower-coral">Join Our Coaching Staff</h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto mb-8"></div>
+        <p class="text-xl md:text-2xl text-empower-navy/80 leading-relaxed mb-8">
+          Help shape the future of volleyball in Southeastern Wisconsin
+        </p>
+        <p class="text-lg text-empower-navy/70 max-w-3xl mx-auto">
+          We're building a coaching team that shares our values of empowerment, excellence, and family. We're specifically seeking coaches for our inaugural U15 Girls Nationals team. If you're passionate about developing young athletes and creating a positive, competitive environment, we'd love to hear from you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Looking For Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16 animate-slide-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-coral">What We're Looking For</h2>
+        <p class="text-lg text-empower-navy/70">
+          Ideal candidates for our coaching positions
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="animate-slide-up" style="animation-delay: 0.1s;">
+          <h3 class="text-xl font-bold text-empower-navy mb-6 text-center">Coaching Experience</h3>
+          <div class="space-y-4">
+            <div class="bg-empower-light-gray/50 rounded-xl p-4">
+              <h4 class="font-semibold text-empower-navy mb-2">Volleyball Knowledge</h4>
+              <p class="text-sm text-empower-navy/80">Strong understanding of volleyball fundamentals, strategies, and player development.</p>
+            </div>
+            <div class="bg-empower-light-gray/50 rounded-xl p-4">
+              <h4 class="font-semibold text-empower-navy mb-2">U15 Coaching Experience</h4>
+              <p class="text-sm text-empower-navy/80">Experience working with U15 athletes, preferably in club volleyball or competitive settings.</p>
+            </div>
+            <div class="bg-empower-light-gray/50 rounded-xl p-4">
+              <h4 class="font-semibold text-empower-navy mb-2">Competitive Background</h4>
+              <p class="text-sm text-empower-navy/80">Understanding of club volleyball, tournament play, and national-level competition.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="animate-slide-up" style="animation-delay: 0.2s;">
+          <h3 class="text-xl font-bold text-empower-navy mb-6 text-center">Personal Qualities</h3>
+          <div class="space-y-4">
+            <div class="bg-empower-light-gray/50 rounded-xl p-4">
+              <h4 class="font-semibold text-empower-navy mb-2">Character & Values</h4>
+              <p class="text-sm text-empower-navy/80">Alignment with our values of empowerment, excellence, teamwork, family, and integrity.</p>
+            </div>
+            <div class="bg-empower-light-gray/50 rounded-xl p-4">
+              <h4 class="font-semibold text-empower-navy mb-2">Communication Skills</h4>
+              <p class="text-sm text-empower-navy/80">Ability to effectively communicate with players, parents, and fellow coaches.</p>
+            </div>
+            <div class="bg-empower-light-gray/50 rounded-xl p-4">
+              <h4 class="font-semibold text-empower-navy mb-2">Commitment</h4>
+              <p class="text-sm text-empower-navy/80">Dedication to player development and willingness to invest in our program's success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section id="coaching-form" class="py-20 section-gradient">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16 animate-slide-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-coral">U15 Nationals Coaching Application</h2>
+        <p class="text-lg text-empower-navy/70">
+          Tell us about your coaching background and interest in joining our U15 Girls Nationals team
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <form 
+          id="coaching-form" 
+          class="card p-10 space-y-6"
+          action="/api/coaching"
+          method="POST"
+        >
+          <!-- Honeypot spam protection -->
+          <input type="checkbox" name="botcheck" style="display: none;">
+          
+          <!-- Form Header -->
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-empower-navy mb-4">
+              U15 Nationals Coaching Application
+            </h3>
+            <p class="text-empower-mid-gray text-lg">
+              Help us build our inaugural U15 Girls Nationals team
+            </p>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="space-y-6">
+            <h4 class="text-lg font-bold text-empower-navy border-b border-empower-light-gray pb-2">Contact Information</h4>
+            
+            <div class="space-y-2">
+              <label for="name" class="block text-sm font-semibold text-empower-navy">
+                Full Name *
+              </label>
+              <input 
+                type="text" 
+                id="name"
+                name="name" 
+                placeholder="Enter your full name" 
+                required
+                class="form-input"
+              />
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="email" class="block text-sm font-semibold text-empower-navy">
+                  Email Address *
+                </label>
+                <input 
+                  type="email" 
+                  id="email"
+                  name="email" 
+                  placeholder="your.email@example.com" 
+                  required
+                  class="form-input"
+                />
+              </div>
+              
+              <div class="space-y-2">
+                <label for="phone" class="block text-sm font-semibold text-empower-navy">
+                  Phone Number *
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone"
+                  name="phone" 
+                  placeholder="(555) 123-4567"
+                  required
+                  class="form-input"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Coaching Background -->
+          <div class="space-y-6">
+            <h4 class="text-lg font-bold text-empower-navy border-b border-empower-light-gray pb-2">Coaching Background</h4>
+            
+            <div class="space-y-2">
+              <label for="experience" class="block text-sm font-semibold text-empower-navy">
+                Coaching Experience *
+              </label>
+              <textarea 
+                id="experience"
+                name="experience" 
+                placeholder="Describe your volleyball coaching background, including teams coached, years of experience, playing background, and coaching philosophy."
+                rows="4"
+                required
+                class="form-textarea"
+              ></textarea>
+            </div>
+            
+            <div class="space-y-2">
+              <label for="certifications" class="block text-sm font-semibold text-empower-navy">
+                Coaching Certifications
+              </label>
+              <textarea 
+                id="certifications"
+                name="certifications" 
+                placeholder="List any coaching certifications, training programs, or relevant qualifications you hold."
+                rows="3"
+                class="form-textarea"
+              ></textarea>
+            </div>
+            
+
+            
+            <div class="space-y-2">
+              <label for="availability" class="block text-sm font-semibold text-empower-navy">
+                Availability *
+              </label>
+              <textarea 
+                id="availability"
+                name="availability" 
+                placeholder="Describe your schedule availability, including evenings, weekends, and any seasonal commitments or limitations."
+                rows="3"
+                required
+                class="form-textarea"
+              ></textarea>
+            </div>
+          </div>
+          
+          <!-- Privacy Notice -->
+          <div class="bg-empower-light-gray/50 rounded-xl p-4 text-sm text-empower-mid-gray">
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-empower-coral mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+              <p>
+                We respect your privacy. Your information will only be used to evaluate your coaching application and will never be shared with third parties.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <div class="pt-4">
+            <button type="submit" class="btn-primary w-full text-lg py-4 group accent-heading">
+              <span class="flex items-center justify-center gap-2">
+                Submit Application
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+            </button>
+          </div>
+          
+          <!-- Form Footer -->
+          <div class="text-center pt-4 border-t border-empower-light-gray">
+            <p class="text-sm text-empower-mid-gray">
+              Questions? Contact us at 
+              <a href="mailto:info@empowervb.com" class="text-empower-coral hover:underline font-semibold">
+                info@empowervb.com
+              </a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Form enhancement script
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('coaching-form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    if (form && submitBtn) {
+      // Add form validation feedback
+      const inputs = form.querySelectorAll('input[required], textarea[required]');
+      
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          if (this.value.trim() === '') {
+            this.classList.add('border-red-400');
+            this.classList.remove('border-empower-coral');
+          } else {
+            this.classList.remove('border-red-400');
+            this.classList.add('border-empower-coral');
+          }
+        });
+        
+        input.addEventListener('input', function() {
+          if (this.value.trim() !== '') {
+            this.classList.remove('border-red-400');
+            this.classList.add('border-empower-coral');
+          }
+        });
+      });
+      
+      // Submit button loading state and analytics tracking
+      form.addEventListener('submit', function() {
+        // Track form submission
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', {
+            form_name: 'coaching_form',
+            form_destination: 'thank_you_coaching_page'
+          });
+        }
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Submitting...
+          </span>
+        `;
+      });
+    }
+  });
+</script> 

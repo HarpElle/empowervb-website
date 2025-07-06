@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+---
+<BaseLayout>
+  <section class="min-h-screen flex flex-col justify-center items-center section-navy text-white py-20 px-4">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-empower-coral/5 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-empower-lilac/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-2xl w-full">
+      <div class="card-gradient p-12 text-center animate-scale-in">
+        <!-- Success Icon -->
+        <div class="mb-8">
+          <div class="w-20 h-20 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-empower-coral">
+          Thank You for Your Coaching Interest!
+        </h1>
+        
+        <p class="text-lg md:text-xl mb-8 text-empower-navy/80 leading-relaxed">
+          We've received your coaching application and are excited about your interest in joining our team. Our leadership will carefully review your background and experience.
+        </p>
+        
+        <!-- What's Next Section -->
+        <div class="bg-empower-light-gray/50 rounded-2xl p-6 mb-8 text-left">
+          <h3 class="text-xl font-bold text-empower-navy mb-4 text-center">What Happens Next?</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-empower-coral rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-white text-sm font-bold">1</span>
+              </div>
+              <p class="text-empower-navy/80">We'll review your application and coaching background</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-empower-lilac rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-white text-sm font-bold">2</span>
+              </div>
+              <p class="text-empower-navy/80">You'll receive a response within 5-7 business days</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-empower-navy rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-white text-sm font-bold">3</span>
+              </div>
+              <p class="text-empower-navy/80">If selected, we'll schedule an interview to discuss opportunities</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Encouragement -->
+        <div class="mb-8">
+          <blockquote class="scripture-quote text-xl mb-2">
+            encourage each other and build each other up
+          </blockquote>
+          <p class="text-empower-navy/70">
+            Thank you for your interest in helping us build something special at Empower Volleyball Club. We appreciate coaches who share our passion for developing young athletes.
+          </p>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/" class="btn-primary">
+            Return to Homepage
+          </a>
+          <a href="/about" class="btn-secondary">
+            Learn More About Us
+          </a>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="mt-8 pt-6 border-t border-empower-light-gray">
+          <p class="text-sm text-empower-mid-gray mb-3">
+            Have questions about the application process?
+          </p>
+          <a href="mailto:info@empowervb.com" class="text-empower-coral hover:underline font-semibold">
+            info@empowervb.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout> 
