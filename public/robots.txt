@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow news-future page (for developers only)
+Disallow: /news-future/
+Disallow: /news-future
+
+# Sitemap location
+Sitemap: https://empowervb.com/sitemap.xml 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,11 +15,13 @@
   
   /* Typography hierarchy */
   h1 {
-    @apply font-heading font-bold text-empower-coral text-4xl md:text-5xl lg:text-6xl leading-tight;
+    @apply font-bold text-empower-coral text-4xl md:text-5xl lg:text-6xl leading-tight;
+    font-family: 'Oswald', sans-serif;
   }
   
   h2 {
-    @apply font-heading font-bold text-empower-coral text-2xl md:text-3xl lg:text-4xl leading-tight;
+    @apply font-bold text-empower-coral text-2xl md:text-3xl lg:text-4xl leading-tight;
+    font-family: 'Oswald', sans-serif;
   }
   
   h3 {
@@ -40,7 +42,8 @@
   }
   
   .prose h2 {
-    @apply relative text-empower-coral font-heading font-bold text-2xl md:text-3xl mt-12 mb-6 pb-3 border-b border-empower-light-gray/30;
+    @apply relative text-empower-coral font-bold text-2xl md:text-3xl mt-12 mb-6 pb-3 border-b border-empower-light-gray/30;
+    font-family: 'Oswald', sans-serif;
   }
   
   .prose h3 {
@@ -103,6 +106,30 @@
   /* Focus states */
   *:focus {
     @apply outline-none ring-2 ring-empower-coral ring-offset-2;
+  }
+  
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  .sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
   }
   
   /* Selection styles */

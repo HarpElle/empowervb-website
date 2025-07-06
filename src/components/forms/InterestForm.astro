@@ -187,8 +187,16 @@
         });
       });
       
-      // Submit button loading state
+      // Submit button loading state and analytics tracking
       form.addEventListener('submit', function() {
+        // Track form submission
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', {
+            form_name: 'interest_form',
+            form_destination: 'thank_you_page'
+          });
+        }
+        
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
           <span class="flex items-center justify-center gap-2">

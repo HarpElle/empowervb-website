@@ -26,7 +26,10 @@ function getPreview(article) {
   return firstPara ? firstPara.replace(/[*_`#]/g, '').substring(0, 200) + '...' : '';
 }
 ---
-<BaseLayout>
+<BaseLayout 
+  title="News & Updates | Empower Volleyball Club"
+  description="Latest news, announcements, and updates from Empower Volleyball Club. Stay informed about tryouts, coaching staff, and club developments."
+>
   <!-- Hero Section -->
   <section class="py-20 section-gradient">
     <div class="max-w-4xl mx-auto px-4 text-center animate-fade-in">

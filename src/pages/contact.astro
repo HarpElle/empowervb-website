@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../components/layout/BaseLayout.astro';
 ---
-<BaseLayout>
+<BaseLayout 
+  title="Contact Empower Volleyball Club | Get in Touch"
+  description="Contact Empower Volleyball Club in Elm Grove, Wisconsin. Email info@empowervb.com or call for information about our U15 Nationals team."
+>
   <!-- Hero Section -->
   <section class="py-20 section-gradient">
     <div class="max-w-4xl mx-auto px-4 text-center">
@@ -57,10 +60,10 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
             For urgent matters and direct contact
           </p>
           <a 
-            href="tel:+1-262-555-0123" 
+            href="tel:+1-262-235-3232" 
             class="text-empower-coral font-semibold hover:text-empower-coral/80 transition-colors"
           >
-            (262) 555-0123
+            (262) 235-3232
           </a>
         </div>
 
@@ -247,5 +250,45 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
         </div>
       </div>
     </div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When will tryouts be held?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tryouts for our inaugural U15 team will be held in August 2025. Pre-registered families will receive priority access to tryout information and registration details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What age group are you targeting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We're starting with a U15 Nationals team, which typically includes athletes who will be 15 years old or younger during the 2025-2026 season."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where will training be held?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We're finalizing our facility arrangements in the Elm Grove area. Specific location details will be announced as we get closer to our launch date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Empower VB different from other clubs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As a new club, we have the unique opportunity to build our culture from the ground up. We focus on individual attention, family-centered values, and a faith-informed approach that welcomes athletes of all backgrounds."
+          }
+        }
+      ]
+    }
+    </script>
   </section>
 </BaseLayout>

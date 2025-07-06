@@ -26,7 +26,11 @@ function getPreview(article) {
   return firstPara ? firstPara.replace(/[*_`#]/g, '').substring(0, 200) + '...' : '';
 }
 ---
-<BaseLayout>
+<BaseLayout 
+  title="Upcoming News & Events | Empower Volleyball Club (Development)"
+  description="Preview upcoming announcements and events from Empower Volleyball Club."
+  robots="noindex, nofollow"
+>
   <!-- Hero Section -->
   <section class="py-20 section-gradient">
     <div class="max-w-4xl mx-auto px-4 text-center animate-fade-in">
@@ -53,7 +57,7 @@ function getPreview(article) {
             No Upcoming News Scheduled
           </h2>
           <p class="text-lg text-empower-mid-gray mb-8 max-w-lg mx-auto">
-            We don’t have any upcoming announcements scheduled at the moment. Check back soon for future updates!
+            We don't have any upcoming announcements scheduled at the moment. Check back soon for future updates!
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/news" class="btn-primary">
