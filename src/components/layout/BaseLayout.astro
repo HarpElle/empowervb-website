@@ -108,12 +108,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
             <img 
               src="/images/logo/empower-logo-horizontal-full-color.svg"
               alt="Empower Volleyball Club Logo"
-              class="h-48 w-auto relative z-10"
+              class="h-12 w-auto relative z-10"
               loading="lazy"
             />
             <!-- Precise background positioning -->
             <div class="absolute bg-white/95 backdrop-blur-sm shadow-lg" 
-                 style="top: -4px; bottom: 64px; left: -16px; right: -16px; z-index: 0; border-radius: 1rem 1rem 1rem 1rem;"></div>
+                 style="top: -36px; bottom: -8px; left: -16px; right: -16px; z-index: 0; border-radius: 1rem 1rem 1rem 1rem;"></div>
           </div>
         </a>
         
@@ -159,7 +159,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     </nav>
     
     <!-- Enhanced Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden fixed top-20 left-0 right-0 z-40 bg-gradient-to-br from-empower-navy to-empower-navy/95 backdrop-blur-md border-t border-white/10" aria-hidden="true">
+    <div id="mobile-menu" class="md:hidden hidden fixed top-[72px] left-0 right-0 z-40 bg-gradient-to-br from-empower-navy to-empower-navy/95 backdrop-blur-md border-t border-white/10" aria-hidden="true">
       <div class="px-4 py-6 space-y-4">
         <a href="/" class={`block py-3 px-4 rounded-lg transition-all duration-300 ${currentPath === '/' ? 'bg-empower-coral text-white' : 'text-white hover:bg-white/10 hover:text-empower-coral'}`}>
           <div class="flex items-center gap-3">
@@ -221,12 +221,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <!-- Brand Section -->
           <div class="space-y-4">
-            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300 -my-12
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300 my-2
             ">
               <img 
                 src="/images/logo/empower-logo-horizontal-white.svg" 
                 alt="Empower Volleyball Club Logo" 
-                class="h-36 w-auto"
+                class="h-10 w-auto"
                 loading="lazy"
               />
             </a>
