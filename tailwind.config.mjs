@@ -12,7 +12,7 @@ export default {
         'empower-dark-gray': '#525252',
       },
       fontFamily: {
-        'heading': ['Oswald', 'sans-serif'],
+        'heading': ['Montserrat', 'sans-serif'],
         'body': ['Poppins', 'system-ui', 'sans-serif'],
         'accent': ['Quicksand', 'sans-serif'],
       },
@@ -24,7 +24,7 @@ export default {
             fontFamily: 'Poppins, system-ui, sans-serif',
             h1: {
               color: '#FF7F50',
-              fontFamily: 'Oswald, sans-serif',
+              fontFamily: 'Montserrat, sans-serif',
               fontWeight: '700',
               fontSize: '2.25rem',
               lineHeight: '2.5rem',
@@ -33,7 +33,7 @@ export default {
             },
             h2: {
               color: '#FF7F50',
-              fontFamily: 'Oswald, sans-serif',
+              fontFamily: 'Montserrat, sans-serif',
               fontWeight: '600',
               fontSize: '1.875rem',
               lineHeight: '2.25rem',

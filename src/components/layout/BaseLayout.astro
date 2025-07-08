@@ -26,14 +26,14 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/logo/empower-volleyball-icon.svg" />
+    <meta property="og:image" content="/images/logo/empower-logo-og-image.png" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/images/logo/empower-volleyball-icon.svg" />
+    <meta property="twitter:image" content="/images/logo/empower-logo-og-image.png" />
     
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content={robots} />
@@ -45,7 +45,10 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <meta name="ICBM" content="43.0442, -88.0826">
     
     <meta name="theme-color" content="#FF7F50" />
-    <link rel="icon" type="image/svg+xml" href="/images/logo/empower-volleyball-icon-lilac.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg" />
+    <link rel="icon" type="image/png" href="/images/logo/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/images/logo/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/logo/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -65,7 +68,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       "@type": ["SportsOrganization", "LocalBusiness"],
       "name": "Empower Volleyball Club",
       "url": "https://empowervb.com",
-      "logo": "https://empowervb.com/images/logo/empower-volleyball-icon.svg",
+      "logo": "https://empowervb.com/images/logo/empower-logo-horizontal-full-color-2x.png",
       "description": "Premier volleyball club empowering female athletes in Southeastern Wisconsin",
       "address": {
         "@type": "PostalAddress",
@@ -87,8 +90,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     }
     </script>
 
-    <link rel="preload" as="image" href="/images/logo/empower-volleyball-icon-lilac.svg" type="image/svg+xml" />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap&display=swap" />
+    <link rel="preload" as="image" href="/images/logo/empower-logo-horizontal-full-color.svg" type="image/svg+xml" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
     <!-- Skip to main content link for accessibility -->
@@ -97,21 +100,20 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     </a>
     
     <!-- Enhanced Responsive Navbar -->
-    <nav class="w-full section-navy text-white px-4 py-4 shadow-lg sticky top-0 z-50 backdrop-blur-md">
+    <nav id="navbar" class="w-full section-navy text-white px-4 py-3 shadow-lg fixed top-0 z-50 backdrop-blur-md transition-transform duration-300 ease-out">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <!-- Logo Section with Navigation -->
-        <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
+        <a href="/" class="flex items-center gap-3 hover:opacity-90 transition-opacity duration-300 -mt-20 -mb-24 relative">
           <div class="relative">
             <img 
-              src="/images/logo/empower-volleyball-icon-lilac.svg" 
-              alt="Empower Volleyball Club Logo" 
-              class="h-12 w-12 hover:scale-110 transition-transform duration-300"
+              src="/images/logo/empower-logo-horizontal-full-color.svg"
+              alt="Empower Volleyball Club Logo"
+              class="h-48 w-auto relative z-10"
               loading="lazy"
             />
-          </div>
-          <div class="flex flex-col">
-            <span class="font-bold text-xl md:text-2xl tracking-wide text-gradient">Empower</span>
-            <span class="text-s text-empower-lilac/80 hidden md:block">Volleyball Club</span>
+            <!-- Precise background positioning -->
+            <div class="absolute bg-white/95 backdrop-blur-sm shadow-lg" 
+                 style="top: -4px; bottom: 64px; left: -16px; right: -16px; z-index: 0; border-radius: 1rem 1rem 1rem 1rem;"></div>
           </div>
         </a>
         
@@ -219,17 +221,14 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <!-- Brand Section -->
           <div class="space-y-4">
-            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300 -my-12
+            ">
               <img 
-                src="/images/logo/empower-volleyball-icon-lilac.svg" 
+                src="/images/logo/empower-logo-horizontal-white.svg" 
                 alt="Empower Volleyball Club Logo" 
-                class="h-10 w-10"
+                class="h-36 w-auto"
                 loading="lazy"
               />
-              <div>
-                <div class="font-bold text-xl text-gradient">Empower</div>
-                <div class="text-sm text-empower-lilac/80">Volleyball Club</div>
-              </div>
             </a>
             <p class="text-sm text-empower-lilac/90 leading-relaxed">
               Empowering female athletes through excellence, teamwork, and character development in a supportive family environment.
@@ -345,9 +344,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         });
       }
       
-      // Add scroll effect to navigation
+      // Add smooth scroll effect to navigation
       let lastScrollTop = 0;
-      const nav = document.querySelector('nav');
+      const nav = document.getElementById('navbar');
       
       window.addEventListener('scroll', () => {
         // Don't hide nav when mobile menu is open
@@ -357,11 +356,11 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-          // Scrolling down
+        if (scrollTop > lastScrollTop && scrollTop > 80) {
+          // Scrolling down - hide navbar smoothly
           nav.style.transform = 'translateY(-100%)';
         } else {
-          // Scrolling up
+          // Scrolling up - show navbar smoothly
           nav.style.transform = 'translateY(0)';
         }
         
