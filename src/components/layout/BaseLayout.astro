@@ -93,7 +93,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <link rel="preload" as="image" href="/images/logo/empower-logo-horizontal-full-color.svg" type="image/svg+xml" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" />
   </head>
-  <body class="min-h-screen flex flex-col bg-white">
+  <body class="min-h-screen flex flex-col bg-empower-navy">
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-empower-coral text-white px-4 py-2 rounded-lg z-50">
       Skip to main content
@@ -113,7 +113,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
             />
             <!-- Precise background positioning -->
             <div class="absolute bg-white/95 backdrop-blur-sm shadow-lg" 
-                 style="top: -36px; bottom: -8px; left: -16px; right: -16px; z-index: 0; border-radius: 1rem 1rem 1rem 1rem;"></div>
+                 style="top: -36px; bottom: -16px; left: -16px; right: -16px; z-index: 0; border-radius: 1rem 1rem 1rem 1rem;"></div>
           </div>
         </a>
         
@@ -121,7 +121,6 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         <div class="hidden md:flex items-center gap-8">
           <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Home</a>
           <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}>About</a>
-          <a href="/interest" class={`nav-link ${currentPath === '/interest' ? 'active' : ''}`}>Interest</a>
           <a href="/news" class={`nav-link ${currentPath === '/news' ? 'active' : ''}`}>News</a>
           <a href="/contact" class={`nav-link ${currentPath === '/contact' ? 'active' : ''}`}>Contact</a>
         </div>
@@ -177,14 +176,6 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
             About
           </div>
         </a>
-        <a href="/interest" class={`block py-3 px-4 rounded-lg transition-all duration-300 ${currentPath === '/interest' ? 'bg-empower-coral text-white' : 'text-white hover:bg-white/10 hover:text-empower-coral'}`}>
-          <div class="flex items-center gap-3">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            Interest
-          </div>
-        </a>
         <a href="/news" class={`block py-3 px-4 rounded-lg transition-all duration-300 ${currentPath === '/news' ? 'bg-empower-coral text-white' : 'text-white hover:bg-white/10 hover:text-empower-coral'}`}>
           <div class="flex items-center gap-3">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -211,7 +202,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       </div>
     </div>
     
-    <main id="main-content" class="flex-1 w-full pt-[72px]">
+    <main id="main-content" class="flex-1 w-full pt-[64px]">
       <slot />
     </main>
     
@@ -358,7 +349,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         
         if (scrollTop > lastScrollTop && scrollTop > 80) {
           // Scrolling down - hide navbar smoothly
-          nav.style.transform = 'translateY(-100%)';
+          nav.style.transform = 'translateY(-120%)';
         } else {
           // Scrolling up - show navbar smoothly
           nav.style.transform = 'translateY(0)';
