@@ -1,0 +1,114 @@
+---
+import { getAllTiers } from '../../data/sponsorship-tiers.js';
+
+const tiers = getAllTiers();
+---
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+  {tiers.map((tier, index) => (
+    <div 
+      class={`card p-8 text-center group hover:shadow-2xl transition-all duration-300 animate-slide-up ${
+        tier.key === 'platinum' ? 'ring-2 ring-empower-coral ring-opacity-50 relative' : ''
+      }`}
+      style={`animation-delay: ${index * 0.1}s;`}
+    >
+      {tier.key === 'platinum' && (
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span class="bg-empower-coral text-white px-4 py-1 rounded-full text-sm font-semibold accent-text">
+            Most Popular
+          </span>
+        </div>
+      )}
+      
+      <!-- Tier Icon -->
+      <div class={`w-20 h-20 bg-gradient-to-br from-${tier.color} to-${tier.color}/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+        {tier.key === 'platinum' && (
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+        )}
+        {tier.key === 'gold' && (
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        )}
+        {tier.key === 'silver' && (
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        )}
+        {tier.key === 'bronze' && (
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        )}
+      </div>
+      
+      <!-- Tier Name and Price -->
+      <h3 class={`text-xl font-bold mb-2 text-${tier.color} accent-heading`}>
+        {tier.name}
+      </h3>
+      <div class={`text-3xl font-bold mb-6 text-${tier.color}`}>
+        {tier.price}
+      </div>
+      
+      <!-- Benefits List -->
+      <div class="space-y-3 mb-8 text-left">
+        {tier.benefits.slice(0, 4).map(benefit => (
+          <div class="flex items-start gap-2">
+            <svg class={`w-4 h-4 text-${tier.color} mt-1 flex-shrink-0`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-sm text-empower-mid-gray leading-relaxed">
+              {benefit}
+            </span>
+          </div>
+        ))}
+        {tier.benefits.length > 4 && (
+          <div class="flex items-start gap-2">
+            <svg class={`w-4 h-4 text-${tier.color} mt-1 flex-shrink-0`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            <span class="text-sm text-empower-mid-gray leading-relaxed font-medium">
+              {tier.benefits.length - 4} more benefits
+            </span>
+          </div>
+        )}
+      </div>
+      
+      <!-- CTA Button -->
+      <a 
+        href="#partnership-form" 
+        class={`btn-${tier.key === 'platinum' ? 'primary' : 'secondary'} w-full text-center group-hover:shadow-lg transition-shadow accent-text flex flex-col py-3`}
+        onclick={`document.getElementById('interest_tier').value = '${tier.key}'; document.getElementById('partnership-form').scrollIntoView({ behavior: 'smooth' });`}
+      >
+        <span>Choose</span>
+        <span>{tier.name}</span>
+      </a>
+    </div>
+  ))}
+</div>
+
+<!-- Custom Package Card -->
+<div class="mt-8">
+  <div class="card-gradient p-8 text-center max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.4s;">
+    <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1z" />
+      </svg>
+    </div>
+    <h3 class="text-2xl font-bold text-empower-coral mb-4 accent-heading">
+      Custom Partnership
+    </h3>
+    <p class="text-empower-navy/80 mb-6 leading-relaxed">
+      Have unique goals or ideas? Let's create a custom sponsorship package that perfectly aligns with your business objectives and our mission.
+    </p>
+    <a 
+      href="#partnership-form" 
+      class="btn-primary accent-text"
+      onclick="document.getElementById('interest_tier').value = 'custom'; document.getElementById('partnership-form').scrollIntoView({ behavior: 'smooth' });"
+    >
+      Discuss Custom Package
+    </a>
+  </div>
+</div> 

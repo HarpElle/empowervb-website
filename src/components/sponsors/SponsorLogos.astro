@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+import { getTierByName } from '../../data/sponsorship-tiers.js';
+
+// Props
+const { 
+  showTitle = true, 
+  maxLogos = null, 
+  size = 'medium',
+  includeCallToAction = true 
+} = Astro.props;
+
+// Get all active sponsors
+let allSponsors = [];
+try {
+  allSponsors = await getCollection('sponsors');
+} catch (error) {
+  // Handle case where no sponsors exist yet
+  console.log('No sponsors collection found, starting with empty array');
+}
+const activeSponsors = allSponsors.filter(sponsor => sponsor.data.active);
+
+// Sort by tier priority and limit if specified
+const sortedSponsors = activeSponsors
+  .sort((a, b) => {
+    const tierA = getTierByName(a.data.tier);
+    const tierB = getTierByName(b.data.tier);
+    return tierA.priority - tierB.priority;
+  })
+  .slice(0, maxLogos || activeSponsors.length);
+
+const hasSponsors = sortedSponsors.length > 0;
+
+// Size configurations
+const sizeConfig = {
+  small: { logoHeight: 'h-12', spacing: 'gap-6', gridCols: 'md:grid-cols-4 lg:grid-cols-6' },
+  medium: { logoHeight: 'h-16', spacing: 'gap-8', gridCols: 'md:grid-cols-3 lg:grid-cols-4' },
+  large: { logoHeight: 'h-20', spacing: 'gap-10', gridCols: 'md:grid-cols-2 lg:grid-cols-3' }
+};
+
+const config = sizeConfig[size] || sizeConfig.medium;
+---
+
+{hasSponsors ? (
+  <div class="py-12">
+    {showTitle && (
+      <div class="text-center mb-12 animate-slide-up">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-empower-coral accent-heading">
+          Our Amazing Sponsors
+        </h2>
+        <p class="text-empower-navy/70">
+          Thank you to our incredible partners who make our mission possible
+        </p>
+      </div>
+    )}
+    
+    <div class={`grid grid-cols-2 ${config.gridCols} ${config.spacing} items-center justify-items-center animate-slide-up`}>
+      {sortedSponsors.map((sponsor, index) => {
+        const tier = getTierByName(sponsor.data.tier);
+        return (
+          <div 
+            class="group cursor-pointer transition-all duration-300 hover:scale-105"
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            {sponsor.data.website ? (
+              <a 
+                href={sponsor.data.website} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="block p-4 rounded-lg hover:bg-empower-light-gray/30 transition-colors"
+              >
+                <img 
+                  src={sponsor.data.logo} 
+                  alt={`${sponsor.data.name} - ${tier.name} Sponsor`}
+                  class={`${config.logoHeight} w-auto object-contain mx-auto grayscale-0 group-hover:grayscale-0 transition-all duration-300`}
+                  loading="lazy"
+                />
+              </a>
+            ) : (
+              <div class="p-4 rounded-lg">
+                <img 
+                  src={sponsor.data.logo} 
+                  alt={`${sponsor.data.name} - ${tier.name} Sponsor`}
+                  class={`${config.logoHeight} w-auto object-contain mx-auto`}
+                  loading="lazy"
+                />
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+    
+    {includeCallToAction && (
+      <div class="text-center mt-12 animate-slide-up" style="animation-delay: 0.3s;">
+        <a href="/sponsors" class="text-empower-coral hover:text-empower-coral/80 font-semibold transition-colors accent-text">
+          Meet All Our Sponsors →
+        </a>
+      </div>
+    )}
+  </div>
+) : (
+  includeCallToAction && (
+    <div class="py-12">
+      <div class="text-center animate-slide-up">
+        <div class="max-w-2xl mx-auto">
+          <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl md:text-2xl font-bold text-empower-coral mb-4 accent-heading">
+            Partner With Us
+          </h3>
+          <p class="text-empower-navy/70 mb-6 leading-relaxed">
+            Join us in empowering young female athletes. Be part of something special from day one as a founding sponsor of Wisconsin's newest premier volleyball club.
+          </p>
+          <a href="/sponsorship" class="btn-primary accent-text">
+            Explore Partnership Opportunities
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+)}
+
+<style>
+  /* Optional: Add subtle animation for logos */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+</style> 

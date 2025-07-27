@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getAllTiers } from '../data/sponsorship-tiers.js';
+
+// Get all active sponsors (will be empty initially)
+let allSponsors = [];
+try {
+  allSponsors = await getCollection('sponsors');
+} catch (error) {
+  // Handle case where no sponsors exist yet
+  console.log('No sponsors collection found, starting with empty array');
+}
+const activeSponsors = allSponsors.filter(sponsor => sponsor.data.active);
+
+// Group sponsors by tier
+const sponsorsByTier = {};
+const tiers = getAllTiers();
+tiers.forEach(tier => {
+  sponsorsByTier[tier.key] = activeSponsors.filter(sponsor => sponsor.data.tier === tier.key);
+});
+
+const hasSponsors = activeSponsors.length > 0;
+---
+<BaseLayout 
+  title="Our Sponsors | Empower Volleyball Club Partners"
+  description="Meet the amazing businesses and organizations that support Empower Volleyball Club and help us empower young female athletes in Wisconsin."
+>
+  <!-- Hero Section -->
+  <section class="py-20 section-gradient">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="animate-slide-up">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-empower-coral">Our Amazing Sponsors</h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-empower-coral to-empower-lilac mx-auto mb-8"></div>
+        {hasSponsors ? (
+          <p class="text-xl md:text-2xl text-empower-navy/80 leading-relaxed">
+            Thank you to our incredible partners who make our mission possible
+          </p>
+        ) : (
+          <p class="text-xl md:text-2xl text-empower-navy/80 leading-relaxed">
+            We're building something special and would love your support
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  {hasSponsors ? (
+    <!-- Sponsors Display Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        {tiers.map(tier => {
+          const tierSponsors = sponsorsByTier[tier.key];
+          if (tierSponsors.length === 0) return null;
+          
+          return (
+            <div class="mb-16 animate-slide-up">
+              <div class="text-center mb-12">
+                <h2 class={`text-3xl md:text-4xl font-bold mb-4 text-${tier.color} accent-heading`}>
+                  {tier.name}s
+                </h2>
+                <p class="text-lg text-empower-navy/70">
+                  {tier.name} level supporters making a significant impact
+                </p>
+              </div>
+              
+              <div class={`grid ${tierSponsors.length === 1 ? 'grid-cols-1 max-w-md mx-auto' : tierSponsors.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
+                {tierSponsors.map(sponsor => (
+                  <div class="card p-8 text-center group hover:shadow-2xl transition-all duration-300">
+                    <div class="mb-6">
+                      <img 
+                        src={sponsor.data.logo} 
+                        alt={`${sponsor.data.name} logo`}
+                        class={`mx-auto max-h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300`}
+                        style={`max-width: ${tier.displayFeatures.logoWidth};`}
+                      />
+                    </div>
+                    <h3 class={`text-xl font-bold mb-4 text-${tier.color} accent-heading`}>
+                      {sponsor.data.name}
+                    </h3>
+                    {sponsor.data.description && (
+                      <p class="text-empower-mid-gray leading-relaxed mb-4">
+                        {sponsor.data.description}
+                      </p>
+                    )}
+                    {sponsor.data.testimonial && tier.displayFeatures.testimonialSpace && (
+                      <blockquote class="text-empower-navy/80 italic border-l-4 border-empower-coral pl-4 mb-4">
+                        "{sponsor.data.testimonial}"
+                      </blockquote>
+                    )}
+                    {sponsor.data.website && (
+                      <a 
+                        href={sponsor.data.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn-secondary text-sm"
+                      >
+                        Visit Website
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="py-20 section-gradient">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="animate-slide-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-empower-coral">Thank You to Our Partners</h2>
+          <div class="card-gradient p-10 max-w-3xl mx-auto">
+            <blockquote class="scripture-quote mb-4">
+              encourage each other and build each other up
+            </blockquote>
+            <cite class="scripture-citation">1 Thessalonians 5:11</cite>
+            <div class="mt-6 text-empower-navy/80 leading-relaxed">
+              <p>Our sponsors don't just support our team—they encourage our athletes to reach their potential and help us build a community where young women can thrive. Thank you for believing in our mission and investing in the next generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ) : (
+    <!-- No Sponsors Yet Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="animate-slide-up">
+          <div class="w-32 h-32 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-coral">Be Our First Sponsor</h2>
+          <p class="text-lg text-empower-navy/80 leading-relaxed mb-8 max-w-3xl mx-auto">
+            As Wisconsin's newest premier volleyball club, we're looking for founding sponsors who want to be part of something special from day one. Join us in empowering young female athletes and building a legacy of excellence.
+          </p>
+          
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="card p-6 text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-empower-navy mb-2 accent-heading">Ground Floor Opportunity</h3>
+              <p class="text-empower-mid-gray text-sm">Be recognized as a founding sponsor of Wisconsin's newest premier volleyball club.</p>
+            </div>
+            
+            <div class="card p-6 text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-empower-navy mb-2 accent-heading">Meaningful Impact</h3>
+              <p class="text-empower-mid-gray text-sm">Directly support young women's development in athletics and character.</p>
+            </div>
+            
+            <div class="card p-6 text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-empower-coral to-empower-coral/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-empower-navy mb-2 accent-heading">Community Connection</h3>
+              <p class="text-empower-mid-gray text-sm">Connect with engaged families and the local volleyball community.</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="/sponsorship" class="btn-primary text-lg px-8 py-4 accent-heading">
+              Explore Partnership Opportunities
+            </a>
+            <a href="mailto:info@empowervb.com" class="btn-secondary text-lg px-8 py-4">
+              Contact Us Directly
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Join Our Sponsors Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="animate-slide-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-empower-coral">
+          {hasSponsors ? 'Join Our Amazing Sponsors' : 'Become Our First Sponsor'}
+        </h2>
+        <p class="text-lg text-empower-navy/70 mb-8 max-w-3xl mx-auto">
+          {hasSponsors 
+            ? 'Ready to join these incredible partners in supporting our athletes? We'd love to discuss how we can create a meaningful partnership together.'
+            : 'Ready to be part of something special from the beginning? Let's discuss how we can create a partnership that supports our athletes and achieves your business goals.'
+          }
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="/sponsorship#partnership-form" class="btn-primary">
+            Start Partnership Discussion
+          </a>
+          <a href="/about" class="btn-secondary">
+            Learn More About Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout> 

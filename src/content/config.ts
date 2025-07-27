@@ -24,4 +24,20 @@ const news = defineCollection({
   }),
 });
 
-export const collections = { teams, news }; 
+const sponsors = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    tier: z.enum(['platinum', 'gold', 'silver', 'bronze']),
+    logo: z.string(),
+    website: z.string().url().optional(),
+    description: z.string().optional(),
+    startDate: z.string(),
+    endDate: z.string().optional(),
+    active: z.boolean().default(true),
+    featured: z.boolean().default(false),
+    testimonial: z.string().optional(),
+  }),
+});
+
+export const collections = { teams, news, sponsors }; 
