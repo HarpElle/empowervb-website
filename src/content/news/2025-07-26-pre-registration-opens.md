@@ -8,7 +8,7 @@ featured: false
 
 ## We're Official: Registered with Badger Region Volleyball!
 
-We're thrilled to announce that Empower Volleyball Club is now officially registered with Badger Region Volleyball! This milestone marks a significant step forward in our journey to empower young female athletes in Southeastern Wisconsin.
+We're thrilled to share that Empower Volleyball Club is officially registered with Badger Region Volleyball! Having completed our registration process, this milestone marks a significant step forward in our journey to empower young female athletes in Southeastern Wisconsin.
 
 ### Building Our Foundation Team
 

@@ -16,7 +16,7 @@
         </svg>
       </div>
       <h3 class="text-2xl md:text-3xl font-bold text-empower-navy mb-4">
-        Pre-Register Your Interest
+        Register Your Interest
       </h3>
       <p class="text-empower-mid-gray text-lg">
         Be the first to know when U15 Nationals tryouts are announced!
@@ -87,26 +87,59 @@
     </div>
     
     <div class="space-y-2">
-      <label for="grade" class="block text-sm font-semibold text-empower-navy">
-        Current Grade (2025-26 School Year) *
+      <label for="age" class="block text-sm font-semibold text-empower-navy">
+        Player Age (as of July 1, 2025) *
       </label>
       <div class="relative">
         <select 
-          id="grade"
-          name="grade" 
+          id="age"
+          name="age" 
           required
           class="form-select"
         >
-          <option value="">Select current grade</option>
-          <option value="7th Grade">7th Grade</option>
-          <option value="8th Grade">8th Grade</option>
-          <option value="9th Grade">9th Grade</option>
+          <option value="">Select player age</option>
+          <option value="13">13 years old</option>
+          <option value="14">14 years old</option>
+          <option value="15">15 years old</option>
         </select>
         <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
           <svg class="w-4 h-4 text-empower-mid-gray" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </div>
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <label class="block text-sm font-semibold text-empower-navy">
+        Position(s) Played *
+      </label>
+      <p class="text-xs text-empower-mid-gray mb-3">Select all positions your player is comfortable playing</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" name="positions" value="Outside Hitter" class="form-checkbox text-empower-coral">
+          <span class="text-sm text-empower-navy">Outside Hitter</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" name="positions" value="Middle Hitter" class="form-checkbox text-empower-coral">
+          <span class="text-sm text-empower-navy">Middle Hitter</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" name="positions" value="Setter" class="form-checkbox text-empower-coral">
+          <span class="text-sm text-empower-navy">Setter</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" name="positions" value="Libero" class="form-checkbox text-empower-coral">
+          <span class="text-sm text-empower-navy">Libero</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" name="positions" value="Defensive Specialist" class="form-checkbox text-empower-coral">
+          <span class="text-sm text-empower-navy">Defensive Specialist</span>
+        </label>
+        <label class="flex items-center space-x-2 cursor-pointer">
+          <input type="checkbox" name="positions" value="Right Side" class="form-checkbox text-empower-coral">
+          <span class="text-sm text-empower-navy">Right Side</span>
+        </label>
       </div>
     </div>
     
@@ -188,8 +221,33 @@
         });
       });
       
+      // Position validation
+      const positionCheckboxes = form.querySelectorAll('input[name="positions"]');
+      const positionContainer = form.querySelector('div:has(input[name="positions"])').parentElement;
+      
+      function validatePositions() {
+        const checkedPositions = form.querySelectorAll('input[name="positions"]:checked');
+        if (checkedPositions.length === 0) {
+          positionContainer.classList.add('border-red-400', 'border', 'rounded-lg', 'p-2');
+          return false;
+        } else {
+          positionContainer.classList.remove('border-red-400', 'border', 'rounded-lg', 'p-2');
+          return true;
+        }
+      }
+      
+      positionCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', validatePositions);
+      });
+      
       // Submit button loading state and analytics tracking
-      form.addEventListener('submit', function() {
+      form.addEventListener('submit', function(e) {
+        // Validate positions before submitting
+        if (!validatePositions()) {
+          e.preventDefault();
+          positionContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return false;
+        }
         // Track form submission
         if (typeof gtag !== 'undefined') {
           gtag('event', 'form_submit', {

@@ -11,7 +11,8 @@ export async function onRequestPost(context) {
       parent_name: formData.get('parent_name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
-      grade: formData.get('grade'),
+      age: formData.get('age'),
+      positions: formData.getAll('positions'), // Get all selected positions
       experience: formData.get('experience'),
       botcheck: formData.get('botcheck')
     };
@@ -25,7 +26,7 @@ export async function onRequestPost(context) {
     }
 
     // Validate required fields
-    if (!data.player_name || !data.parent_name || !data.email || !data.grade) {
+    if (!data.player_name || !data.parent_name || !data.email || !data.age || !data.positions.length) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' }
@@ -56,12 +57,13 @@ Player Information:
 - Parent/Guardian Name: ${data.parent_name}
 - Email: ${data.email}
 - Phone: ${data.phone || 'Not provided'}
-- Current Grade: ${data.grade}
+- Player Age (as of July 1, 2025): ${data.age} years old
+- Position(s) Played: ${data.positions.join(', ')}
 - Volleyball Experience: ${data.experience || 'Not provided'}
 
 Submission Details:
 - Submitted: ${cstTime}
-- Form Type: Pre-Register Your Interest
+- Form Type: Register Your Interest
 
 This submission was received through the Empower Volleyball Club website.
     `;
