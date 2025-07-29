@@ -3,14 +3,14 @@
 
 export const CONTACT_INFO = {
   // Primary email address - change this single value to update across the site
-  email: 'empowervbclub@gmail.com', // Temporarily changed from info@empowervb.com
+  email: 'info@empowervb.com',
   phone: '(262) 235-3232',
   
   // Email display text (for when we want to show the email address)
-  emailDisplay: 'empowervbclub@gmail.com', // Temporarily changed from info@empowervb.com
+  emailDisplay: 'info@empowervb.com',
   
   // Mailto links
-  emailLink: 'mailto:empowervbclub@gmail.com', // Temporarily changed from mailto:info@empowervb.com
+  emailLink: 'mailto:info@empowervb.com',
 };
 
 // Helper function to get email for API endpoints
