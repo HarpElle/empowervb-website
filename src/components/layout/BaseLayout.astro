@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css';
 import RosterAlert from '../ui/RosterAlert.astro';
+import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
 
 // Accept props from pages with defaults
 const { 
@@ -81,7 +82,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         "@type": "ContactPoint",
         "telephone": "+1-262-235-3232",
         "contactType": "customer service",
-        "email": "info@empowervb.com"
+        "email": getEmailDisplay()
       },
       "sameAs": [
         "https://empowervb.com"
@@ -257,11 +258,11 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
           <div class="space-y-4">
             <h4 class="font-semibold text-lg text-white">Get In Touch</h4>
             <div class="space-y-3">
-              <a href="mailto:info@empowervb.com" class="flex items-center gap-2 text-sm text-empower-lilac/90 hover:text-empower-coral transition-colors" onclick="if(typeof gtag !== 'undefined') gtag('event', 'email_click', {email_address: 'info@empowervb.com'});">
+              <a href={getEmailLink()} class="flex items-center gap-2 text-sm text-empower-lilac/90 hover:text-empower-coral transition-colors" onclick={`if(typeof gtag !== 'undefined') gtag('event', 'email_click', {email_address: '${getEmailDisplay()}'});`}>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-.876 1.775l-7.125 5.7a2.25 2.25 0 01-2.748 0l-7.125-5.7A2.25 2.25 0 012.25 6.993V6.75" />
                 </svg>
-                info@empowervb.com
+                {getEmailDisplay()}
               </a>
               <a href="tel:+1-262-235-3232" class="flex items-center gap-2 text-sm text-empower-lilac/90 hover:text-empower-coral transition-colors" onclick="if(typeof gtag !== 'undefined') gtag('event', 'phone_click', {phone_number: '(262) 235-3232'});">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">

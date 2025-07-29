@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../components/layout/BaseLayout.astro';
+import { getEmailLink, getEmailDisplay } from '../config/contact.js';
 ---
 <BaseLayout>
   <section class="min-h-screen flex flex-col justify-center items-center section-navy text-white py-20 px-4">
@@ -80,9 +81,9 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
           <p class="text-sm text-empower-mid-gray mb-3">
             Have questions about the application process?
           </p>
-          <a href="mailto:info@empowervb.com" class="text-empower-coral hover:underline font-semibold">
-            info@empowervb.com
-          </a>
+                  <a href={getEmailLink()} class="text-empower-coral hover:underline font-semibold">
+          {getEmailDisplay()}
+        </a>
         </div>
       </div>
     </div>

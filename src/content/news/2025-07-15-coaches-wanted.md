@@ -59,7 +59,7 @@ At Empower Volleyball Club, we believe that the best coaches are also the best t
 This is a unique opportunity to help establish the standards and traditions that will define Empower Volleyball Club for years to come. If you’re passionate about volleyball, committed to developing young athletes, and excited about building something meaningful from the ground up, we want to hear from you.
 
 **Next Steps:**
-Contact us at [info@empowervb.com](mailto:info@empowervb.com) with:
+Contact us at [empowervbclub@gmail.com](mailto:empowervbclub@gmail.com) with:
 - Your coaching background and philosophy
 - Why you’re interested in Empower Volleyball Club
 - Your vision for developing young athletes

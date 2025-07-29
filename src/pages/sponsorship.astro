@@ -3,6 +3,7 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
 import TierCards from '../components/sponsorship/TierCards.astro';
 import SponsorshipForm from '../components/forms/SponsorshipForm.astro';
 import { sponsorshipBenefits } from '../data/sponsorship-tiers.js';
+import { getEmailLink, getEmailDisplay } from '../config/contact.js';
 ---
 <BaseLayout 
   title="Partner With Us | Empower Volleyball Club Sponsorship Opportunities"
@@ -236,7 +237,7 @@ import { sponsorshipBenefits } from '../data/sponsorship-tiers.js';
           We'd love to discuss how a partnership with Empower Volleyball Club can benefit your business while supporting our athletes.
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="mailto:info@empowervb.com" class="btn-primary">
+                        <a href={getEmailLink()} class="btn-primary">
             Email Us Directly
           </a>
           <a href="/about" class="btn-secondary">

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../components/layout/BaseLayout.astro';
+import { getEmailLink, getEmailDisplay } from '../config/contact.js';
 ---
 <BaseLayout 
   title="Thank You for Your Interest | Empower Volleyball Club Sponsorship"
@@ -99,7 +100,7 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
           Don't hesitate to reach out if you have any immediate questions about partnership opportunities.
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="mailto:info@empowervb.com" class="btn-primary">
+                      <a href={getEmailLink()} class="btn-primary">
             Email Us Directly
           </a>
           <a href="/about" class="btn-secondary">

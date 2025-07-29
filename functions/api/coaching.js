@@ -1,4 +1,5 @@
 import { Resend } from 'resend';
+import { getContactEmail } from '../../src/config/contact.js';
 
 export async function onRequestPost(context) {
   try {
@@ -71,7 +72,7 @@ This submission was received through the Empower Volleyball Club website.
     // Send email
     await resend.emails.send({
       from: 'noreply@interest.empowervb.com',
-      to: 'info@empowervb.com',
+      to: getContactEmail(),
       subject: `U15 Nationals Coaching Application - ${data.name}`,
       text: emailContent,
       replyTo: data.email

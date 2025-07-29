@@ -2,6 +2,7 @@
 import BaseLayout from '../components/layout/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getAllTiers } from '../data/sponsorship-tiers.js';
+import { getEmailLink, getEmailDisplay } from '../config/contact.js';
 
 // Get all active sponsors (will be empty initially)
 let allSponsors = [];
@@ -166,8 +167,8 @@ function getGridClasses(count) {
           </a>
           <p class="text-sm text-empower-mid-gray">
             Questions? Contact us at 
-            <a href="mailto:info@empowervb.com" class="text-empower-coral hover:underline font-semibold">
-              info@empowervb.com
+            <a href={getEmailLink()} class="text-empower-coral hover:underline font-semibold">
+              {getEmailDisplay()}
             </a>
           </p>
         </div>
@@ -193,8 +194,8 @@ function getGridClasses(count) {
         </a>
         <p class="text-sm text-white/70">
           Contact us at 
-          <a href="mailto:info@empowervb.com" class="text-empower-coral hover:underline font-semibold">
-            info@empowervb.com
+          <a href={getEmailLink()} class="text-empower-coral hover:underline font-semibold">
+            {getEmailDisplay()}
           </a>
           or call 
           <a href="tel:2622353232" class="text-empower-coral hover:underline font-semibold">

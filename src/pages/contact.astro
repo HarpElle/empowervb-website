@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../components/layout/BaseLayout.astro';
+import { getEmailLink, getEmailDisplay } from '../config/contact.js';
 ---
 <BaseLayout 
   title="Contact Empower Volleyball Club | Get in Touch"
-  description="Contact Empower Volleyball Club in Elm Grove, Wisconsin. Email info@empowervb.com or call for information about our U15 Nationals team."
+  description={`Contact Empower Volleyball Club in Elm Grove, Wisconsin. Email ${getEmailDisplay()} or call for information about our U15 Nationals team.`}
 >
   <!-- Hero Section -->
   <section class="py-20 section-gradient">
@@ -41,10 +42,10 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
             For general inquiries and questions
           </p>
           <a 
-            href="mailto:info@empowervb.com" 
+            href={getEmailLink()} 
             class="text-empower-coral font-semibold hover:text-empower-coral/80 transition-colors"
           >
-            info@empowervb.com
+            {getEmailDisplay()}
           </a>
         </div>
 

@@ -66,7 +66,7 @@ This is an incredible opportunity for the right athletes to join something speci
 
 ### Take Action Today
 
-**Contact us at [info@empowervb.com](mailto:info@empowervb.com)** to:
+**Contact us at [empowervbclub@gmail.com](mailto:empowervbclub@gmail.com)** to:
 - Submit your interest for our remaining roster spots
 - Ask questions about our program and expectations
 - Learn more about our training philosophy and competitive goals

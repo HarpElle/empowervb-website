@@ -1,5 +1,6 @@
 ---
 // This form collects interest before official tryout announcements
+import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
 ---
 <div class="max-w-2xl mx-auto">
   <form 
@@ -184,8 +185,8 @@
     <div class="text-center pt-4 border-t border-empower-light-gray">
       <p class="text-sm text-empower-mid-gray">
         Questions? Contact us at 
-        <a href="mailto:info@empowervb.com" class="text-empower-coral hover:underline font-semibold">
-          info@empowervb.com
+        <a href={getEmailLink()} class="text-empower-coral hover:underline font-semibold">
+          {getEmailDisplay()}
         </a>
       </p>
     </div>

@@ -78,7 +78,7 @@ To the families who have already joined us: thank you for your trust and partner
 
 We'll continue providing regular updates as our program develops. The best way to stay informed is to reach out directly and become part of our growing community.
 
-**Contact us at [info@empowervb.com](mailto:info@empowervb.com)** to:
+**Contact us at [empowervbclub@gmail.com](mailto:empowervbclub@gmail.com)** to:
 - Learn about remaining opportunities
 - Ask questions about our program and philosophy
 - Schedule conversations with our coaching staff
