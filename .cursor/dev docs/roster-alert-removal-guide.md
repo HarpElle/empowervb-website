@@ -1,7 +1,7 @@
 # Roster Alert Removal Guide
 
 ## When to Remove
-Remove the roster alert when you've filled the **1 Outside Hitter** and **2 Middle Hitters** positions.
+Remove the roster alert when you've filled the **1 Outside Hitter**, **2 Middle Hitters**, **1 Setter**, and **1 Opposite Hitter** positions.
 
 ## How to Remove (2 simple steps)
 

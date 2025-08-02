@@ -18,6 +18,8 @@ Thanks to the incredible response from our community, we've been able to extend 
 We're actively seeking exceptional athletes for the following positions:
 - **One Outside Hitter** - Looking for a dynamic player who brings both offensive power and defensive versatility
 - **Two Middle Hitters** - Seeking athletes who excel at the net with strong blocking and quick attack skills
+- **One Setter** - Looking for a skilled playmaker who can contribute to our offensive flow and help our hitters reach their full potential
+- **One Opposite Hitter** - Seeking a versatile athlete who can dominate both at the net and from the back row
 
 ### Your Opportunity to Join Something Special
 
@@ -66,9 +68,13 @@ This is an incredible opportunity for the right athletes to join something speci
 
 ### Take Action Today
 
+**Register Your Interest:**
+The best way to ensure you receive all program updates and tryout information is to **[complete our Register Your Interest form on our Home page](/#interest)**. This allows us to provide you with personalized information and priority notification as details become available.
+
+**Still have questions?** Feel free to reach out directly:
+
 **Contact us at [empowervbclub@gmail.com](mailto:empowervbclub@gmail.com)** to:
-- Submit your interest for our remaining roster spots
-- Ask questions about our program and expectations
+- Ask detailed questions about our program and expectations
 - Learn more about our training philosophy and competitive goals
 - Connect with our coaching staff
 
