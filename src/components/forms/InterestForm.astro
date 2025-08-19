@@ -17,10 +17,10 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
         </svg>
       </div>
       <h3 class="text-2xl md:text-3xl font-bold text-empower-navy mb-4">
-        U15 Nationals Tryout Registration
+        Register Your Interest - U15 Nationals
       </h3>
       <p class="text-empower-mid-gray text-lg">
-        Register for tryouts on Sunday, August 17th, 2025 • 2:00-4:00 PM
+        Seeking Outside & Middle Hitters • Evaluations resume November 15th
       </p>
     </div>
     
@@ -115,7 +115,7 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
       <label class="block text-sm font-semibold text-empower-navy">
         Position(s) Played *
       </label>
-      <p class="text-xs text-empower-mid-gray mb-3">Select all positions your player is comfortable playing</p>
+      <p class="text-xs text-empower-mid-gray mb-3">We're currently seeking Outside Hitters and Middle Hitters for our roster</p>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
         <label class="flex items-center space-x-2 cursor-pointer">
           <input type="checkbox" name="positions" value="Outside Hitter" class="form-checkbox text-empower-coral">
@@ -125,21 +125,21 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
           <input type="checkbox" name="positions" value="Middle Hitter" class="form-checkbox text-empower-coral">
           <span class="text-sm text-empower-navy">Middle Hitter</span>
         </label>
-        <label class="flex items-center space-x-2 cursor-pointer">
-          <input type="checkbox" name="positions" value="Setter" class="form-checkbox text-empower-coral">
-          <span class="text-sm text-empower-navy">Setter</span>
+        <label class="flex items-center space-x-2 cursor-not-allowed opacity-60">
+          <input type="checkbox" name="positions" value="Setter" class="form-checkbox text-empower-coral" disabled>
+          <span class="text-sm text-empower-navy">Setter (Not currently needed)</span>
         </label>
         <label class="flex items-center space-x-2 cursor-not-allowed opacity-60">
           <input type="checkbox" name="positions" value="Libero" class="form-checkbox text-empower-coral" disabled>
-          <span class="text-sm text-empower-navy">Libero</span>
+          <span class="text-sm text-empower-navy">Libero (Not currently needed)</span>
         </label>
         <label class="flex items-center space-x-2 cursor-not-allowed opacity-60">
           <input type="checkbox" name="positions" value="Defensive Specialist" class="form-checkbox text-empower-coral" disabled>
-          <span class="text-sm text-empower-navy">Defensive Specialist</span>
+          <span class="text-sm text-empower-navy">Defensive Specialist (Not currently needed)</span>
         </label>
-        <label class="flex items-center space-x-2 cursor-pointer">
-          <input type="checkbox" name="positions" value="Right Side" class="form-checkbox text-empower-coral">
-          <span class="text-sm text-empower-navy">Right Side</span>
+        <label class="flex items-center space-x-2 cursor-not-allowed opacity-60">
+          <input type="checkbox" name="positions" value="Right Side" class="form-checkbox text-empower-coral" disabled>
+          <span class="text-sm text-empower-navy">Right Side (Not currently needed)</span>
         </label>
       </div>
     </div>
@@ -151,7 +151,7 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
       <textarea 
         id="experience"
         name="experience" 
-        placeholder="Tell us about your volleyball experience (teams, positions, years played, etc.)"
+placeholder="Tell us about your volleyball experience (teams, positions, years played, etc.) and your interest in joining our team"
         rows="4"
         class="form-textarea"
       ></textarea>
@@ -164,7 +164,7 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
         </svg>
         <p>
-          We respect your privacy. Your information will only be used for tryout registration and to contact you about your daughter's evaluation results and team opportunities. Information will never be shared with third parties.
+          We respect your privacy. Your information will only be used to contact you about potential evaluation opportunities starting November 15th and team opportunities. Information will never be shared with third parties.
         </p>
       </div>
     </div>
@@ -173,7 +173,7 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
     <div class="pt-4">
       <button type="submit" class="btn-primary w-full text-lg py-4 group accent-heading">
         <span class="flex items-center justify-center gap-2">
-          Register for Tryouts
+          Register Interest
           <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
@@ -252,7 +252,7 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
         // Track form submission
         if (typeof gtag !== 'undefined') {
           gtag('event', 'form_submit', {
-            form_name: 'tryout_registration_form',
+            form_name: 'interest_registration_form',
             form_destination: 'thank_you_page'
           });
         }
@@ -264,7 +264,7 @@ import { getEmailLink, getEmailDisplay } from '../../config/contact.js';
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            Registering...
+            Submitting...
           </span>
         `;
       });
