@@ -6,6 +6,10 @@ tags: ["announcement", "roster-update", "team-building", "excellence", "communit
 featured: false
 ---
 
+> **UPDATE (August 18, 2025):** Our tryouts were successfully held on August 17th (not August 14th as originally planned). **[Read our latest roster update and information about remaining opportunities →](/news/2025-08-18-roster-update-second-chance-tryouts)**
+
+---
+
 ## Foundation Team Roster Opportunities
 
 We're thrilled with the progress of our founding team and are actively seeking exceptional athletes to complete our inaugural U15 Nationals roster.

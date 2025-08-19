@@ -19,5 +19,5 @@ with character development in a supportive family environment.
 - Character and leadership development
 - A supportive team family atmosphere
 
-*Official tryout information will be announced in August 2025 following 
-our Badger Region affiliation.* 
+*We are currently finalizing our roster after successful August tryouts. 
+Stay tuned for potential Second Chance Tryout opportunities in November.* 

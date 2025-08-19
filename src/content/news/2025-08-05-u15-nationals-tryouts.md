@@ -3,7 +3,11 @@ title: "U15 Nationals Team Tryouts Set for August 17th"
 date: "2025-08-05"
 author: "Empower Volleyball Club"
 tags: ["tryouts", "u15-nationals", "registration", "team-formation", "opportunity"]
-featured: true
+featured: false
+---
+
+> **UPDATE (August 18, 2025):** These tryouts have been completed! We made solid progress on our roster and are still seeking an Outside Hitter and Middle Hitter. **[Read our latest roster update and information about Second Chance Tryouts in November →](/news/2025-08-18-roster-update-second-chance-tryouts)**
+
 ---
 
 ## U15 Nationals Team Tryouts Scheduled
