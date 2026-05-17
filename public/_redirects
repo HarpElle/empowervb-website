@@ -1,1 +1,8 @@
-/*    /    200
+/_astro/*           /_astro/:splat           200
+/images/*           /images/:splat           200
+/documents/*        /documents/:splat        200
+/favicon.svg        /favicon.svg             200
+/robots.txt         /robots.txt              200
+/sitemap-0.xml      /sitemap-0.xml           200
+/sitemap-index.xml  /sitemap-index.xml       200
+/*                  /index.html              200

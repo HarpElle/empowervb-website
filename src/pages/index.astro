@@ -24,13 +24,25 @@
     <meta name="twitter:image" content="https://empowervb.com/images/logo/empower-logo-og-image.png" />
 
     <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg" />
+    <link rel="icon" type="image/png" href="/images/logo/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/logo/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1C1F4C" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <style>
+    <style is:global>
+      :root {
+        --navy: #1c1f4c;
+        --coral: #ff7f50;
+        --lilac: #c8a2c8;
+        --muted: #525252;
+        --page-bg: #f7f5f7;
+        --card-bg: #ffffff;
+      }
       *,
       *::before,
       *::after {
@@ -43,75 +55,154 @@
       }
       body {
         min-height: 100vh;
-        background: #fafafa;
-        color: #1c1f4c;
+        background-color: var(--page-bg);
+        background-image:
+          radial-gradient(circle at 18% 20%, rgba(200, 162, 200, 0.18), transparent 45%),
+          radial-gradient(circle at 82% 80%, rgba(255, 127, 80, 0.12), transparent 50%);
+        color: var(--navy);
         font-family: 'Poppins', system-ui, sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1.25rem;
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      main {
-        max-width: 640px;
+      main.page {
         width: 100%;
+        max-width: 620px;
+      }
+      article.card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 3rem 2.75rem;
+        box-shadow:
+          0 1px 3px rgba(28, 31, 76, 0.06),
+          0 24px 60px -12px rgba(28, 31, 76, 0.14);
         text-align: center;
       }
       .logo {
         display: block;
-        max-width: 360px;
-        width: 70%;
+        max-width: 300px;
+        width: 78%;
         height: auto;
-        margin: 0 auto 3rem;
-        filter: opacity(0.35) saturate(0.55);
+        margin: 0 auto 1.75rem;
       }
       h1 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
-        font-size: 1.875rem;
+        font-size: 1.75rem;
         line-height: 1.3;
-        color: #1c1f4c;
-        margin: 0 0 2rem;
+        color: var(--navy);
+        margin: 0 0 1.25rem;
+        letter-spacing: -0.01em;
+      }
+      .accent-line {
+        width: 56px;
+        height: 2px;
+        background: var(--coral);
+        border-radius: 2px;
+        margin: 0 auto 1.75rem;
+      }
+      .body-copy {
+        text-align: left;
       }
       p {
         font-size: 1rem;
-        line-height: 1.7;
+        line-height: 1.75;
         margin: 0 0 1.25rem;
-        color: #1c1f4c;
+        color: var(--navy);
       }
       p:last-of-type {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.25rem;
       }
-      a.referral {
-        color: #1c1f4c;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        text-decoration-thickness: 1px;
+      .cta-wrap {
+        text-align: center;
+      }
+      a.cta {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.4rem;
+        font-family: 'Poppins', system-ui, sans-serif;
+        font-weight: 500;
         font-size: 1rem;
+        color: var(--navy);
+        text-decoration: none;
+        border-bottom: 1.5px solid var(--coral);
+        padding-bottom: 4px;
+        transition: color 180ms ease, border-color 180ms ease;
       }
-      a.referral:hover {
-        text-decoration-thickness: 2px;
+      a.cta .arrow {
+        color: var(--coral);
+        transition: transform 180ms ease;
+        display: inline-block;
+      }
+      a.cta:hover {
+        color: var(--coral);
+        border-color: var(--navy);
+      }
+      a.cta:hover .arrow {
+        transform: translateX(4px);
+      }
+      a.cta:focus-visible {
+        outline: 2px solid var(--coral);
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+      footer.credit {
+        text-align: center;
+        font-size: 0.8125rem;
+        color: var(--muted);
+        margin-top: 1.5rem;
+        letter-spacing: 0.02em;
+      }
+      @media (max-width: 480px) {
+        article.card {
+          padding: 2.25rem 1.5rem;
+          border-radius: 16px;
+        }
+        .logo {
+          max-width: 240px;
+          width: 82%;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.9375rem;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <img
-        class="logo"
-        src="/images/logo/empower-logo-horizontal-full-color.svg"
-        alt="Empower Volleyball Club"
-      />
-      <h1>Thank you for the season.</h1>
-      <p>
-        Empower Volleyball Club has concluded operations. With gratitude to the families
-        who took a chance with us — we hope each player carries forward the values we set
-        out to build this club around.
-      </p>
-      <p>
-        For families seeking a club that holds to those same values, we recommend
-        Adversity Wisconsin Volleyball Club, led by Dave Pauers.
-      </p>
-      <a class="referral" href="https://www.adversitywisconsin.org">Visit Adversity Wisconsin →</a>
+    <main class="page">
+      <article class="card">
+        <img
+          class="logo"
+          src="/images/logo/empower-logo-horizontal-full-color.svg"
+          alt="Empower Volleyball Club"
+        />
+        <h1>Thank you for the season.</h1>
+        <div class="accent-line" aria-hidden="true"></div>
+        <div class="body-copy">
+          <p>
+            Empower Volleyball Club has concluded operations. With gratitude to the
+            families who took a chance with us — we hope each player carries forward the
+            values we set out to build this club around.
+          </p>
+          <p>
+            For families seeking a club that holds to those same values, we recommend
+            Adversity Wisconsin Volleyball Club, led by Dave Pauers.
+          </p>
+        </div>
+        <div class="cta-wrap">
+          <a class="cta" href="https://www.adversitywisconsin.org">
+            Visit Adversity Wisconsin
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+      <footer class="credit">© Empower Volleyball Club</footer>
     </main>
   </body>
 </html>
