@@ -1,7 +1,9 @@
-import { z, defineCollection } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const teams = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/teams' }),
   schema: z.object({
     title: z.string(),
     ageGroup: z.string(),
@@ -13,7 +15,7 @@ const teams = defineCollection({
 });
 
 const news = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/news' }),
   schema: z.object({
     title: z.string(),
     date: z.string(),
@@ -25,12 +27,12 @@ const news = defineCollection({
 });
 
 const sponsors = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/sponsors' }),
   schema: z.object({
     name: z.string(),
     tier: z.enum(['platinum', 'gold', 'silver', 'bronze']),
     logo: z.string(),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
     description: z.string().optional(),
     startDate: z.string(),
     endDate: z.string().optional(),
@@ -40,4 +42,4 @@ const sponsors = defineCollection({
   }),
 });
 
-export const collections = { teams, news, sponsors }; 
+export const collections = { teams, news, sponsors };
